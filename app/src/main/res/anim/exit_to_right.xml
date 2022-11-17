@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /**
+  ~  * Created by Nguyen Van Thai on 9/11/22, 10:30 PM
+  ~  * Copyright (c) 2022 . All rights reserved.
+  ~  * Last modified 9/11/22, 10:30 PM
+  ~  */
+  -->
+
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="@android:integer/config_mediumAnimTime"
+    android:fromXDelta="0%"
+    android:interpolator="@anim/transaction_ease_out_t6"
+    android:toXDelta="+100%" />

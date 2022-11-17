@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /**
+  ~  * Created by Nguyen Van Thai on 8/25/22, 2:33 PM
+  ~  * Copyright (c) 2022 . All rights reserved.
+  ~  * Last modified 8/25/22, 2:33 PM
+  ~  */
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/calculator_navigation"
+    app:startDestination="@id/navigation_conversion">
+    <fragment
+        android:id="@+id/navigation_conversion"
+        android:name="com.bangcodin.calculator.ui.fragment.ConverterFragment"
+        android:label="fragment_conversion"
+        tools:layout="@layout/fragment_converter" >
+        <action
+            android:id="@+id/action_navigation_conversion_to_bottomSheetFragment"
+            app:destination="@id/bottomSheetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="com.bangcodin.calculator.ui.fragment.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <dialog
+        android:id="@+id/bottomSheetFragment"
+        android:name="com.bangcodin.calculator.ui.fragment.BottomSheetFragment"
+        android:label="fragment_bottom_sheet_conversion">
+
+    </dialog>
+    <fragment
+        android:id="@+id/settingFragment2"
+        android:name="com.bangcodin.calculator.ui.fragment.SettingFragment"
+        android:label="SettingFragment" >
+        <action
+            android:id="@+id/action_settingFragment2_to_termFragment2"
+            app:destination="@id/termFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/termFragment2"
+        android:name="com.bangcodin.calculator.ui.fragment.TermFragment"
+        android:label="TermFragment" >
+        <action
+            android:id="@+id/action_termFragment2_to_settingFragment2"
+            app:destination="@id/settingFragment2" />
+    </fragment>
+</navigation>

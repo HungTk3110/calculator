@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /**
+  ~  * Created by Trinh Khac Hung on 8/22/22, 10:35 AM
+  ~  * Copyright (c) 2022 . All rights reserved.
+  ~  * Last modified 8/22/22, 10:35 AM
+  ~  */
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/neutrals_color_700"/>
+            <corners android:radius="@dimen/_10sdp"/>
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /**
+  ~  * Created by Nguyen Van Thai on 9/7/22, 12:29 PM
+  ~  * Copyright (c) 2022 . All rights reserved.
+  ~  * Last modified 9/7/22, 12:29 PM
+  ~  */
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1D1D1D">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_language"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/neutrals_color_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/language"
+        app:titleTextColor="@color/white">
+
+        <ImageButton
+            android:id="@+id/btn_oke"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="end"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_baseline_check_24"
+            app:tint="@color/white" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_language_setting"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_language"
+        tools:itemCount="7"
+        tools:listitem="@layout/items_rcv_language" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

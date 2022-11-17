@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "272795633113",
+    "project_id": "calcula-5b6b7",
+    "storage_bucket": "calcula-5b6b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272795633113:android:5ef1bc69061be1ade185c8",
+        "android_client_info": {
+          "package_name": "com.bangcodin.calculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272795633113-r9tm7dmqarqihfca1ut4lp5s2l5vh7h7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA94G1O1QDVBqrV7DBdVGVSI5osaaz-FRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272795633113-r9tm7dmqarqihfca1ut4lp5s2l5vh7h7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

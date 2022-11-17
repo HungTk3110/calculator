@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by PS Solutions on 06/22/2020.
+  ~ Copyright © 2020 Softbank. All rights reserved.
+  ~
+  -->
+
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="400">
+    <alpha
+        android:fromAlpha="0"
+        android:toAlpha="1"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+        />
+</set>

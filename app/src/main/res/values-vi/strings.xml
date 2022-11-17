@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /**
+  ~  * Created by Trinh Khac Hung on 11/11/22, 10:17 AM
+  ~  * Copyright (c) 2022 . All rights reserved.
+  ~  * Last modified 11/11/22, 10:17 AM
+  ~  */
+  -->
+
+<resources>
+    <string name = "app_name"> Máy tính </string>
+    <string name = "hello_blank_fragment"> Xin chào phân đoạn trống </string>
+    <string name = "sub_text"> Đưa trang web của bạn lên một tầm cao mới </string>
+    <string name = "text_start"> Bắt đầu </string>
+    <string name = "calculator_aplication">Ứng dụng Máy tính </string>
+    <string name = "application_setting"> Cài đặt Ứng dụng </string>
+    <string name = "term_condition"> Điều kiện thời hạn </string>
+    <string name = "text_term"> "" </string>
+    <string name = "version_1_0"> Phiên bản 1.0 </string>
+    <string name = "language"> Ngôn ngữ </string>
+    <string name = "advanced_calculator"> Máy Tính </string>
+    <string name = "length_conversion"> Chuyển đổi Độ dài </string>
+    <string name = "conversion"> Chuyển đổi </string>
+    <string name = "history_calculator"> Lịch sử </string>
+    <string name = "currency_conversion"> Quy đổi tiền tệ </string>
+    <string name = "temperature_conversion"> Chuyển đổi nhiệt độ </string>
+    <string name = "time_zone"> Múi giờ </string>
+    <string name = "weight_conversion"> Chuyển đổi Cân nặng </string>
+    <string name = "select_the_timezone"> Chọn Múi giờ </string>
+
+    <string name = "TvBottomSheet1"> Quy đổi tiền tệ </string>
+    <string name = "TvBottomSheet2"> Chuyển đổi độ dài </string>
+    <string name = "TvBottomSheet3"> Chuyển đổi Cân nặng </string>
+    <string name = "TvBottomSheet4"> Chuyển đổi nhiệt độ </string>
+    <string name = "TvBottomSheet5"> Múi giờ </string>
+
+    <string name = "TvEnglish"> Tiếng Anh </string>
+    <string name = "TvIndia"> Ấn Độ </string>
+    <string name = "TvIndonesia"> Indonesia </string>
+    <string name = "TvPortugal"> Bồ Đào Nha </string>
+    <string name = "TvKorean"> Tiếng Hàn </string>
+    <string name = "TvJapan"> Nhật Bản </string>
+    <string name = "TvGermany"> Đức </string>
+    <string name = "TvVietNam"> Việt Nam </string>
+
+    <string name = "TvFaceBook"> FaceBook </string>
+    <string name = "TvDiscord"> Bất hòa </string>
+    <string name = "TvTelegram"> Điện tín </string>
+    <string name = "TvTwitter"> Twitter </string>
+    <string name = "TvMessenger"> Messenger </string>
+    <string name = "TvSkype"> Skype </string>
+    <string name = "TvDropbox"> Hộp kéo thả </string>
+
+    <string name = "tv_usd"> USD - Đô la Mỹ </string>
+    <string name = "tv_euro"> EUR - Euro </string>
+    <string name = "tv_indian"> INR - Đồng Rupee Ấn Độ </string>
+    <string name = "tv_indo"> IDR - Đồng Rupiah Indonesia </string>
+    <string name = "tv_korean"> KRW - Won Hàn Quốc </string>
+    <string name = "tv_japan"> JPY - Yên Nhật </string>
+    <string name = "dataComes"> Dữ liệu đến từ Webull, được cập nhật trên </string>
+    <string name = "tvKg"> Kg - Kilôgam </string>
+    <string name = "tvG"> G - Gam </string>
+    <string name = "tvTon"> Tấn </string>
+    <string name = "tvLb"> Lb - Bảng Anh </string>
+    <string name = "tvOz"> Oz - Ounce </string>
+    <string name = "tvKm"> Km - Kilomet </string>
+    <string name = "tvMet"> m - Đạt </string>
+    <string name = "tvMm"> mm - Milimet </string>
+    <string name = "tvIn"> in - inch </string>
+    <string name = "tvFt"> ft - Bàn chân </string>
+    <string name = "tvYd"> yd - Sân </string>
+    <string name = "tvMi"> mi - Dặm </string>
+
+    <string name="tv_Setting1">Cài Đặt Ngôn Ngữ</string>
+    <string name="tv_Setting2">Đánh Giá Ứng Dụng</string>
+    <string name="tv_Setting3">Chia Sẻ Ứng Dụng</string>
+    <string name="tv_Setting4">Điều khoản</string>
+
+
+</resources>

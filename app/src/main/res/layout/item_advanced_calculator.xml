@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="CalculatorViewModel"
+            type="com.bangcodin.calculator.ui.viewmodel.CalculatorViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cst_layout_Trigonometry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_AC_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_ac"
+                android:onClick="@{()->CalculatorViewModel.clearAll()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_7_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_ngoac_trai_Trigonometry"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_ngoac_trai_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_nd_trai"
+                android:onClick="@{()->CalculatorViewModel.addNgoacTrai()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_8_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_ngoac_phai_Trigonometry"
+                app:layout_constraintStart_toEndOf="@+id/btn_AC_Trigonometry"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_ngoac_phai_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_bnt_nd_phai"
+                android:onClick="@{()->CalculatorViewModel.addNgoacPhai()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_9_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_delete_Trigonometry"
+                app:layout_constraintStart_toEndOf="@+id/btn_ngoac_trai_Trigonometry"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_delete_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_delete"
+                android:onClick="@{()->CalculatorViewModel.delete()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_sin_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_division_Trigonometry"
+                app:layout_constraintStart_toEndOf="@+id/btn_ngoac_phai_Trigonometry"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_division_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_division"
+                android:onClick="@{()->CalculatorViewModel.division()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_multiplied_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_delete_Trigonometry"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_7_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn7"
+                android:onClick="@{()->CalculatorViewModel.addSeven()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_4_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_8_Trigonometry"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_AC_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_8_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn8"
+                android:onClick="@{()->CalculatorViewModel.addEight()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_5_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_9_Trigonometry"
+                app:layout_constraintStart_toEndOf="@+id/btn_7_Trigonometry"
+                app:layout_constraintTop_toBottomOf="@+id/btn_ngoac_trai_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_9_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn9"
+                android:onClick="@{()->CalculatorViewModel.addNine()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_6_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_sin_Trigonometry"
+                app:layout_constraintStart_toEndOf="@+id/btn_8_Trigonometry"
+                app:layout_constraintTop_toBottomOf="@+id/btn_ngoac_phai_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_sin_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_sin"
+                android:onClick="@{()->CalculatorViewModel.sin()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_cos_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_multiplied_Trigonometry"
+                app:layout_constraintStart_toEndOf="@+id/btn_9_Trigonometry"
+                app:layout_constraintTop_toBottomOf="@+id/btn_delete_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_multiplied_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_multiplied"
+                android:onClick="@{()->CalculatorViewModel.multiplied()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_minus_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_sin_Trigonometry"
+                app:layout_constraintTop_toBottomOf="@+id/btn_division_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_4_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn4"
+                android:onClick="@{()->CalculatorViewModel.addFour()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_1_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_5_Trigonometry"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_7_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_5_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:onClick="@{()->CalculatorViewModel.addFive()}"
+                android:src="@drawable/ic_btn5"
+                app:layout_constraintBottom_toTopOf="@id/btn_2_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_6_Trigonometry"
+                app:layout_constraintStart_toEndOf="@+id/btn_4_Trigonometry"
+                app:layout_constraintTop_toBottomOf="@+id/btn_8_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_6_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn6"
+                android:onClick="@{()->CalculatorViewModel.addSix()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_3_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_cos_Trigonometry"
+                app:layout_constraintStart_toEndOf="@+id/btn_5_Trigonometry"
+                app:layout_constraintTop_toBottomOf="@+id/btn_9_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_cos_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_cos"
+                android:onClick="@{()->CalculatorViewModel.cos()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_tan_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_minus_Trigonometry"
+                app:layout_constraintHorizontal_bias="0.483"
+                app:layout_constraintStart_toEndOf="@+id/btn_6_Trigonometry"
+                app:layout_constraintTop_toBottomOf="@+id/btn_sin_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_minus_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_minus"
+                android:onClick="@{()->CalculatorViewModel.minus()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_plus_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_cos_Trigonometry"
+                app:layout_constraintTop_toBottomOf="@+id/btn_multiplied_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_1_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:onClick="@{()->CalculatorViewModel.addOne()}"
+                android:src="@drawable/ic_btn1"
+                app:layout_constraintBottom_toTopOf="@id/btn_0_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_2_Trigonometry"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_4_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_2_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:onClick="@{()->CalculatorViewModel.addTwo()}"
+                android:src="@drawable/ic_btn2"
+                app:layout_constraintBottom_toTopOf="@id/btn_._Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_3_Trigonometry"
+                app:layout_constraintStart_toEndOf="@+id/btn_1_Trigonometry"
+                app:layout_constraintTop_toBottomOf="@+id/btn_5_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_3_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:onClick="@{()->CalculatorViewModel.addThree()}"
+                android:src="@drawable/ic_btn3"
+                app:layout_constraintBottom_toTopOf="@id/btn_pi_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_tan_Trigonometry"
+                app:layout_constraintStart_toEndOf="@+id/btn_2_Trigonometry"
+                app:layout_constraintTop_toBottomOf="@+id/btn_6_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_tan_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_tan"
+                android:onClick="@{()->CalculatorViewModel.tan()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_cot_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_plus_Trigonometry"
+                app:layout_constraintHorizontal_bias="0.483"
+                app:layout_constraintStart_toEndOf="@+id/btn_3_Trigonometry"
+                app:layout_constraintTop_toBottomOf="@+id/btn_cos_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_plus_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_plush"
+                android:onClick="@{()->CalculatorViewModel.push()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_equals_Trigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_tan_Trigonometry"
+                app:layout_constraintTop_toBottomOf="@+id/btn_minus_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_0_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/ic_btn_0"
+                android:onClick="@{()->CalculatorViewModel.addZero()}"
+                app:layout_constraintDimensionRatio="1:1"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_._Trigonometry"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_1_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_._Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_dot"
+                android:onClick="@{()->CalculatorViewModel.addDot()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_pi_Trigonometry"
+                app:layout_constraintStart_toEndOf="@+id/btn_0_Trigonometry"
+                app:layout_constraintTop_toBottomOf="@+id/btn_2_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_pi_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_pi"
+                android:onClick="@{()->CalculatorViewModel.addPi()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_cot_Trigonometry"
+                app:layout_constraintStart_toEndOf="@+id/btn_._Trigonometry"
+                app:layout_constraintTop_toBottomOf="@+id/btn_3_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_cot_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_cot"
+                android:onClick="@{()->CalculatorViewModel.cot()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_equals_Trigonometry"
+                app:layout_constraintStart_toEndOf="@+id/btn_pi_Trigonometry"
+                app:layout_constraintTop_toBottomOf="@+id/btn_tan_Trigonometry" />
+
+            <ImageButton
+                android:id="@+id/btn_equals_Trigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_equals"
+                android:onClick="@{()->CalculatorViewModel.equal()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_cot_Trigonometry"
+                app:layout_constraintTop_toBottomOf="@+id/btn_plus_Trigonometry" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cst_layout_Operator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_AC"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_ac"
+                app:layout_constraintBottom_toTopOf="@id/btn_8"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_ngoac_trai"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_ngoac_trai"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_nd_trai"
+                app:layout_constraintBottom_toTopOf="@id/btn_8"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_ngoac_phai"
+                app:layout_constraintStart_toEndOf="@+id/btn_AC"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_ngoac_phai"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_bnt_nd_phai"
+                app:layout_constraintBottom_toTopOf="@id/btn_8"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_delete"
+                app:layout_constraintStart_toEndOf="@+id/btn_ngoac_trai"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_delete"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_delete"
+                app:layout_constraintBottom_toTopOf="@id/btn_mathematics"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_division"
+                app:layout_constraintStart_toEndOf="@+id/btn_ngoac_phai"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_division"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_division"
+                app:layout_constraintBottom_toTopOf="@id/btn_multiplied"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_delete"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_7"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn7"
+                app:layout_constraintBottom_toTopOf="@id/btn_4"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_AC" />
+
+            <ImageButton
+                android:id="@+id/btn_8"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn8"
+                app:layout_constraintBottom_toTopOf="@id/btn_5"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_9"
+                app:layout_constraintStart_toEndOf="@+id/btn_7"
+                app:layout_constraintTop_toBottomOf="@+id/btn_ngoac_trai" />
+
+            <ImageButton
+                android:id="@+id/btn_9"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn9"
+                app:layout_constraintBottom_toTopOf="@id/btn_6"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_mathematics"
+                app:layout_constraintStart_toEndOf="@+id/btn_8"
+                app:layout_constraintTop_toBottomOf="@+id/btn_ngoac_phai" />
+
+            <ImageButton
+                android:id="@+id/btn_mathematics"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_mathematics"
+                app:layout_constraintBottom_toTopOf="@id/btn_pow"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_multiplied"
+                app:layout_constraintStart_toEndOf="@+id/btn_9"
+                app:layout_constraintTop_toBottomOf="@+id/btn_delete" />
+
+            <ImageButton
+                android:id="@+id/btn_multiplied"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_multiplied"
+                app:layout_constraintBottom_toTopOf="@id/btn_minus"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_mathematics"
+                app:layout_constraintTop_toBottomOf="@+id/btn_division" />
+
+            <ImageButton
+                android:id="@+id/btn_4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn4"
+                app:layout_constraintBottom_toTopOf="@id/btn_1"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_ngoac_trai"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_8" />
+
+            <ImageButton
+                android:id="@+id/btn_5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn5"
+                app:layout_constraintBottom_toTopOf="@id/btn_2"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_ngoac_phai"
+                app:layout_constraintStart_toEndOf="@+id/btn_AC"
+                app:layout_constraintTop_toBottomOf="@+id/btn_8" />
+
+            <ImageButton
+                android:id="@+id/btn_6"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn6"
+                app:layout_constraintBottom_toTopOf="@id/btn_3"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_delete"
+                app:layout_constraintStart_toEndOf="@+id/btn_ngoac_trai"
+                app:layout_constraintTop_toBottomOf="@+id/btn_9" />
+
+            <ImageButton
+                android:id="@+id/btn_pow"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_pow"
+                app:layout_constraintBottom_toTopOf="@id/btn_sqrt"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_division"
+                app:layout_constraintStart_toEndOf="@+id/btn_ngoac_phai"
+                app:layout_constraintTop_toBottomOf="@+id/btn_mathematics" />
+
+            <ImageButton
+                android:id="@+id/btn_minus"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_minus"
+                app:layout_constraintBottom_toTopOf="@id/btn_plus"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_delete"
+                app:layout_constraintTop_toBottomOf="@+id/btn_multiplied" />
+
+            <ImageButton
+                android:id="@+id/btn_1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn1"
+                app:layout_constraintBottom_toTopOf="@id/btn_0"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_4" />
+
+            <ImageButton
+                android:id="@+id/btn_2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn2"
+                app:layout_constraintBottom_toTopOf="@id/btnDotTrigonometry"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_9"
+                app:layout_constraintTop_toBottomOf="@+id/btn_5" />
+
+            <ImageButton
+                android:id="@+id/btn_3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn3"
+                app:layout_constraintBottom_toTopOf="@id/btn_pi"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_mathematics"
+                app:layout_constraintTop_toBottomOf="@+id/btn_6" />
+
+            <ImageButton
+                android:id="@+id/btn_sqrt"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_sqrt"
+                app:layout_constraintBottom_toTopOf="@id/btn_cot"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_multiplied"
+                app:layout_constraintHorizontal_bias="0.483"
+                app:layout_constraintStart_toEndOf="@+id/btn_9"
+                app:layout_constraintTop_toBottomOf="@+id/btn_pow" />
+
+            <ImageButton
+                android:id="@+id/btn_plus"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_plush"
+                app:layout_constraintBottom_toTopOf="@id/btn_equals"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_mathematics"
+                app:layout_constraintTop_toBottomOf="@+id/btn_minus" />
+
+            <ImageButton
+                android:id="@+id/btn_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/ic_btn_0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btnDotTrigonometry"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_1" />
+
+            <ImageButton
+                android:id="@+id/btnDotTrigonometry"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_dot"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_ngoac_phai"
+                app:layout_constraintStart_toEndOf="@+id/btn_AC"
+                app:layout_constraintTop_toBottomOf="@+id/btn_2" />
+
+            <ImageButton
+                android:id="@+id/btn_pi"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_pi"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_delete"
+                app:layout_constraintStart_toEndOf="@+id/btn_ngoac_trai"
+                app:layout_constraintTop_toBottomOf="@+id/btn_3" />
+
+            <ImageButton
+                android:id="@+id/btn_cot"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_cot"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/btn_division"
+                app:layout_constraintStart_toEndOf="@+id/btn_ngoac_phai"
+                app:layout_constraintTop_toBottomOf="@+id/btn_sqrt" />
+
+            <ImageButton
+                android:id="@+id/btn_equals"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/_6sdp"
+                android:background="?attr/selectableItemBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_btn_equals"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_delete"
+                app:layout_constraintTop_toBottomOf="@+id/btn_plus" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sub_text">Take your website to the next level</string>
+    <string name="text_start">Get started</string>
+    <string name="calculator_aplication">Calculator Application</string>
+    <string name="application_setting">Application Setting</string>
+    <string name="term_condition">Term Condition</string>
+    <string name="text_term">""</string>
+    <string name="version_1_0">Version 1.0</string>
+    <string name="language">Language</string>
+    <string name="advanced_calculator">Advanced Calculator</string>
+    <string name="length_conversion">Length Conversion</string>
+    <string name="conversion">Conversion</string>
+    <string name="history_calculator">History</string>
+    <string name="currency_conversion">Currency Conversion</string>
+    <string name="temperature_conversion">Temperature Conversion</string>
+    <string name="time_zone">Time Zone</string>
+    <string name="weight_conversion">Weight Conversion</string>
+    <string name="select_the_timezone">Select Time Zone</string>
+
+    <string name="TvBottomSheet1">Currency Conversion</string>
+    <string name="TvBottomSheet2">Length Conversion</string>
+    <string name="TvBottomSheet3">Weight Conversion</string>
+    <string name="TvBottomSheet4">Temperature Conversion</string>
+    <string name="TvBottomSheet5">Time Zone</string>
+
+    <string name="TvEnglish">English</string>
+    <string name="TvIndia">India</string>
+    <string name="TvIndonesia">Indonesia</string>
+    <string name="TvPortugal">Portugal</string>
+    <string name="TvKorean">Korean</string>
+    <string name="TvJapan">Japan</string>
+    <string name="TvGermany">Germany</string>
+    <string name="TvVietNam">Viet Nam</string>
+
+    <string name="TvFaceBook">FaceBook</string>
+    <string name="TvDiscord">Discord</string>
+    <string name="TvTelegram">Telegram</string>
+    <string name="TvTwitter">Twitter</string>
+    <string name="TvMessenger">Messenger</string>
+    <string name="TvSkype">Skype</string>
+    <string name="TvDropbox">Dropbox</string>
+
+    <string name="tv_usd">USD - US Dollar</string>
+    <string name="tv_euro">EUR - Euro</string>
+    <string name="tv_indian">INR - Indian Rupee</string>
+    <string name="tv_indo">IDR - Indonesian Rupiah</string>
+    <string name="tv_korean">KRW - South Korean Won</string>
+    <string name="tv_japan">JPY - Japanese Yen</string>
+    <string name="dataComes">Data comes from Webull, updated on</string>
+    <string name="tvKg">Kg - Kilogam</string>
+    <string name="tvG">G - Gam</string>
+    <string name="tvTon">Ton</string>
+    <string name="tvLb">Lb - Pound</string>
+    <string name="tvOz">Oz - Ounce</string>
+    <string name="tvKm">Km - Kilomet</string>
+    <string name="tvMet">m - Met</string>
+    <string name="tvMm">mm - Milimet</string>
+    <string name="tvIn">in - inch</string>
+    <string name="tvFt">ft - Feet</string>
+    <string name="tvYd">yd - Yard</string>
+    <string name="tvMi">mi - Mile</string>
+
+    <string name="tv_Setting1">Language settings </string>
+    <string name="tv_Setting2">Rate Application</string>
+    <string name="tv_Setting3">Share Application</string>
+    <string name="tv_Setting4">Term Condition</string>
+
+
+</resources>

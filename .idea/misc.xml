@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/button.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/custom_btn_cancel.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/custom_button_148.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/custom_dialog.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/ic_0.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/ic__.xml" value="0.2635" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/ic__check.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/ic_baseline_keyboard_backspace_24.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/ic_cancel.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/ic_crown.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/ic_currency_conversion.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/ic_delete.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/ic_dot.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/ic_temperature.xml" value="0.199" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/ic_time.xml" value="0.199" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/ic_vector.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/ic_vector__stroke_.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/share_tele.xml" value="0.1755" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/drawable/share_twitter.xml" value="0.199" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/activity_language.xml" value="0.33" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/activity_splash.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/bar_select_the_timezone.xml" value="0.264" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/bottom_sheet.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/bottom_sheet_conversion.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/bottom_sheet_currency_conversion.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/bottom_sheet_length.xml" value="0.10052083333333334" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/bottom_sheet_weight.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/button.xml" value="0.1381340579710145" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/currency_conversion.xml" value="0.6" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/dialog_delete.xml" value="0.136" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_advanced_calculator.xml" value="0.264" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.2" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_bottom_sheet_conversion.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_bottom_sheet_length.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_bottom_sheet_weight.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_conversion.xml" value="0.176" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_converter.xml" value="0.1381340579710145" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_currency_conversion.xml" value="0.2" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_history.xml" value="0.49732620320855614" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_language.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_length_conversion.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_setting.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_share_application_dialog.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_temperature_conversion.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_term_condition.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_timezone.xml" value="0.527681660899654" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/fragment_weight_conversion.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/input_layout.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/item_advanced_calculator.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/item_list_conversion.xml" value="0.264" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/item_list_currency_conversion.xml" value="0.264" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/item_list_history.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/item_list_kg.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/item_list_km.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/item_list_timezone.xml" value="0.4" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/items_rcv_language.xml" value="0.4" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/items_rcv_share_app.xml" value="0.3546875" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/items_setting.xml" value="0.3546875" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/layout_demo_input_number.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/loading_ads.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/select_language.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/share_application_dialog.xml" value="0.3546875" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/splash_ads.xml" value="0.3546875" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/layout/temperature_conversion.xml" value="0.22826086956521738" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2421875" />
+        <entry key="..\:/Android/AndroidProJects/ICalculator/app/src/main/res/menu/layout_popup_menu.xml" value="0.2421875" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/drawable/custom_btn_cancel.xml" value="0.295" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/drawable/custom_dialog.xml" value="0.295" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/drawable/ic__.xml" value="0.295" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/drawable/ic_arrow_right.xml" value="0.295" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/drawable/ic_vector.xml" value="0.295" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/drawable/primary_btn.xml" value="0.295" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/drawable/setting.xml" value="0.295" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/layout/activity_main.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/layout/fragment_blank.xml" value="0.30526315789473685" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/layout/items_rcv_language.xml" value="0.2975630611372381" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/layout/items_rcv_setting.xml" value="0.30526315789473685" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/layout/items_rcv_share_app.xml" value="0.2965811965811966" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/layout/loading_ads.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/layout/select_language.xml" value="0.30526315789473685" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/layout/setting.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/layout/share_application_dialog.xml" value="0.33" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/layout/share_applicontion.xml" value="0.29743589743589743" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/layout/splash_ads.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/ICalculator/app/src/main/res/layout/term_condition.xml" value="0.29743589743589743" />
+        <entry key="app/src/main/res/drawable/ic_ac.xml" value="0.1585" />
+        <entry key="app/src/main/res/layout/activity_language.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24974358974358973" />
+        <entry key="app/src/main/res/layout/button.xml" value="0.24974358974358973" />
+        <entry key="app/src/main/res/layout/items_rcv_language.xml" value="0.24974358974358973" />
+        <entry key="app/src/main/res/layout/items_rcv_setting.xml" value="0.24974358974358973" />
+        <entry key="app/src/main/res/layout/items_rcv_share_app.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/layout_demo_input_number.xml" value="0.24974358974358973" />
+        <entry key="app/src/main/res/layout/loading_ads.xml" value="0.24974358974358973" />
+        <entry key="app/src/main/res/layout/select_language.xml" value="0.24974358974358973" />
+        <entry key="app/src/main/res/layout/setting.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/share_application_dialog.xml" value="0.24974358974358973" />
+        <entry key="app/src/main/res/layout/splash_ads.xml" value="0.11302083333333333" />
+        <entry key="app/src/main/res/layout/term_condition.xml" value="0.11302083333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

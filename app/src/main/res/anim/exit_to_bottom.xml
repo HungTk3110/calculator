@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by PS Solutions on 09/19/2017.
+  ~ Copyright © 2017 Softbank. All rights reserved.
+  ~
+  -->
+
+<translate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="300"
+    android:fromYDelta="0%"
+    android:interpolator="@android:anim/accelerate_interpolator"
+    android:toYDelta="100%" />
