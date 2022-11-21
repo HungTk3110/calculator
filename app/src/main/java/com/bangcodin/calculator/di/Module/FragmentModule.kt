@@ -9,5 +9,4 @@ import dagger.android.ContributesAndroidInjector
 abstract class FragmentModule {
     @ContributesAndroidInjector
     abstract fun contributeBaseFragment() : BaseFragment
-
 }

@@ -52,6 +52,7 @@ abstract class BaseFragment : DaggerFragment() {
         )
     }
 
+    abstract fun initViewModel()
 
 
 }

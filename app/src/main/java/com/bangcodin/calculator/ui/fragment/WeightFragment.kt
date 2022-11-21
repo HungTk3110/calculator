@@ -22,6 +22,10 @@ class WeightFragment : BaseFragment(), BottomSheetKgFragment.OptionConverterKg {
         return R.layout.fragment_weight_conversion
     }
 
+    override fun initViewModel() {
+
+    }
+
 
     private fun setOnClick() {
         val bottomSheet = BottomSheetFragment()

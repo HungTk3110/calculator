@@ -14,6 +14,6 @@ fun setCurrentLanguage(imageButton: ImageView, currentLanguage: String, label: S
 }
 
 @BindingAdapter("src")
-fun setImageFromResource(imageView: ImageView, src: Int){
+fun setImageFromResource(imageView: ImageView, src: Int): Int? {
     imageView.setImageResource(src)
 }

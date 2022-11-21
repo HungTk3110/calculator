@@ -12,11 +12,12 @@ import com.google.gson.annotations.SerializedName
 
 data class ConverterResponse (
     @SerializedName("success")
-    val success: String,
+    var success: String? = "",
 
     @SerializedName("date")
-    val date: String,
+    val date: String ? = null,
 
     @SerializedName("result")
-    val result: String
+    var result: String ? = null
 )
+const val API_KEY = "ylvzO8adSnv6ZEZ2gHwgtN5qwoLhWmLy"
