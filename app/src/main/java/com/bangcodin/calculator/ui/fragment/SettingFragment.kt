@@ -31,7 +31,6 @@ class   SettingFragment : BaseFragment() {
 
 
     private fun setOnClickItem() {
-        val language = LanguageFragment()
         val share = ShareFragment()
         val term = TermFragment()
         binding.iclListSetting.itemEnglish.setOnClickListener {

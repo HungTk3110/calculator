@@ -9,8 +9,7 @@ import dagger.Module
         RoomDbModule :: class ,
         ViewModelModule :: class ,
         RepositoryModule::class ,
-        FragmentModule::class ,
-        WorkerModule::class
+        FragmentModule::class
     ]
 )
 class AppModule

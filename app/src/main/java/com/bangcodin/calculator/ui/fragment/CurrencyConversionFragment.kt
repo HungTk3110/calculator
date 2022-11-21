@@ -12,7 +12,6 @@ import android.util.Log
 import android.widget.Toast
 import androidx.viewbinding.ViewBinding
 import com.bangcodin.calculator.R
-import com.bangcodin.calculator.api.ApiClient
 import com.bangcodin.calculator.api.ConverterResponse
 import com.bangcodin.calculator.databinding.FragmentCurrencyConversionBinding
 import com.bangcodin.calculator.ui.base.BaseFragment

@@ -16,9 +16,12 @@ import com.bangcodin.calculator.databinding.FragmentAdvancedCalculatorBinding
 import com.bangcodin.calculator.ui.base.BaseFragment
 import com.bangcodin.calculator.ui.database.HistoryDatabase
 import com.bangcodin.calculator.ui.viewmodel.CalculatorViewModel
+import javax.inject.Inject
 
 class CalculatorFragment : BaseFragment() {
 
+    @Inject
+    lateinit var viewmodelFactory: ViewModelProvider.Factory
     private lateinit var binding: FragmentAdvancedCalculatorBinding
     private lateinit var calculatorViewModel: CalculatorViewModel
 
@@ -34,7 +37,7 @@ class CalculatorFragment : BaseFragment() {
             binding.cstLayoutKeyboard.cstLayoutOperator.visibility = View.GONE
         }
 
-        calculatorViewModel = ViewModelProvider(this)[CalculatorViewModel::class.java]
+        calculatorViewModel = ViewModelProvider(this,viewmodelFactory)[CalculatorViewModel::class.java]
         binding.calculatorViewModell = calculatorViewModel
         binding.cstLayoutKeyboard.calculatorViewModel = calculatorViewModel
         binding.lifecycleOwner = this
