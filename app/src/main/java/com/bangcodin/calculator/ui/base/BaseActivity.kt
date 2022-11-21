@@ -1,14 +1,17 @@
 package com.bangcodin.calculator.ui.base
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import com.bangcodin.calculator.utils.LocaleHelper
 import com.bangcodin.calculator.utils.SharePreference
 import com.bangcodin.calculator.utils.setAppLocale
+import dagger.android.support.DaggerAppCompatActivity
 
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity : DaggerAppCompatActivity() {
 
     private lateinit var binding: ViewBinding
 
@@ -25,12 +28,16 @@ abstract class BaseActivity : AppCompatActivity() {
 
     private fun checkCurrentLanguage() {
         val currentLanguage =
-            SharePreference.getStringPref(application, SharePreference.CURRENT_LANGUAGE)
+            SharePreference.getStringPref(this, SharePreference.COUNTRY_CODE)
         if (currentLanguage.isNullOrEmpty()) {
-            setAppLocale(this, "en")
+            LocaleHelper().setLocale(this, "en")
         } else {
-            setAppLocale(this, currentLanguage)
+            LocaleHelper().setLocale(this, currentLanguage)
         }
+    }
+    override fun attachBaseContext(base: Context) {
+        LocaleHelper().setLocale(base, LocaleHelper().getLanguage(base))
+        super.attachBaseContext(LocaleHelper().onAttach(base))
     }
 
     protected abstract fun setLayout(): ViewBinding

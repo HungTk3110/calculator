@@ -15,7 +15,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bangcodin.calculator.R
-import com.bangcodin.calculator.ui.model.History
+import com.bangcodin.calculator.models.History
 
 class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.MyViewHolder>(){
     var items  = ArrayList<History>()

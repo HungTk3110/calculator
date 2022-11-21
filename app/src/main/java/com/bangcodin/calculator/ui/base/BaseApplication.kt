@@ -2,6 +2,7 @@ package com.bangcodin.calculator.ui.base
 
 
 import android.app.Application
+import com.bangcodin.calculator.utils.LocaleHelper
 import com.bangcodin.calculator.utils.setAppLocale
 
 open class BaseApplication : Application() {
@@ -17,6 +18,6 @@ open class BaseApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         app = this
-        setAppLocale(this, "vi")
+        LocaleHelper().setLocale(this, "en")
     }
 }

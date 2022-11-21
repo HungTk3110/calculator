@@ -8,22 +8,15 @@
 
 package com.bangcodin.calculator.ui.fragment
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.app.ActivityCompat.recreate
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bangcodin.calculator.CurrencyApplication
 import com.bangcodin.calculator.data.Datasource
 import com.bangcodin.calculator.databinding.FragmentLanguageBinding
 import com.bangcodin.calculator.models.ItemLanguage
-import com.bangcodin.calculator.models.Language
-import com.bangcodin.calculator.ui.adapter.Callback
-import com.bangcodin.calculator.ui.adapter.LanguageAdapter
 
 import com.bangcodin.calculator.ui.adapter.SettingLanguageAdapter
 import com.bangcodin.calculator.ui.viewmodel.LanguageViewModel

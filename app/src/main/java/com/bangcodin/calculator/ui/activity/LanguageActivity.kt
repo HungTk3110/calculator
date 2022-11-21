@@ -17,6 +17,7 @@ import com.bangcodin.calculator.ui.adapter.Callback
 import com.bangcodin.calculator.ui.adapter.LanguageAdapter
 import com.bangcodin.calculator.ui.base.BaseActivity
 import com.bangcodin.calculator.ui.viewmodel.LanguageViewModel
+import com.bangcodin.calculator.utils.LocaleHelper
 import com.bangcodin.calculator.utils.SharePreference
 import com.bangcodin.calculator.utils.setAppLocale
 import com.shashank.sony.fancytoastlib.FancyToast
@@ -40,9 +41,10 @@ class LanguageActivity : BaseActivity(), Callback {
     }
 
     private fun setClickBtnOk() {
-        setAppLocale(this, language = languageViewModel.countryCode.value.toString())
-        SharePreference.setStringPref(application, SharePreference.CURRENT_LANGUAGE,languageViewModel.countryCode.value.toString())
+        LocaleHelper().setLocale(this, language = languageViewModel.countryCode.value.toString())
+        SharePreference.setStringPref(application, SharePreference.COUNTRY_CODE,languageViewModel.countryCode.value.toString())
         recreate()
+        openActivity(MainActivity::class.java,false)
     }
 
     private fun setRCVLanguage() {
@@ -59,6 +61,6 @@ class LanguageActivity : BaseActivity(), Callback {
     override fun onLanguageChange(language: Language) {
         languageViewModel.currentLanguage.value = language.label
         languageViewModel.countryCode.value = language.countryCode
-//        FancyToast.makeText(this, language.label,FancyToast.LENGTH_SHORT, FancyToast.WARNING, false).show()
+//        FancyToast.makeText(this, languageViewModel.countryCode.value.toString(),FancyToast.LENGTH_SHORT, FancyToast.WARNING, false).show()
     }
 }

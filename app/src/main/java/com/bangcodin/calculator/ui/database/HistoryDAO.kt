@@ -9,7 +9,7 @@
 package com.bangcodin.calculator.ui.database
 
 import androidx.room.*
-import com.bangcodin.calculator.ui.model.History
+import com.bangcodin.calculator.models.History
 
 @Dao
 interface HistoryDAO {

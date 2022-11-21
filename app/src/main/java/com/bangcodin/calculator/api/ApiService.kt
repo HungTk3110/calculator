@@ -11,11 +11,11 @@ package com.bangcodin.calculator.api
 import retrofit2.Call
 import retrofit2.http.*
 
-interface ApiInterface {
+interface ApiService {
 
     @GET("convert?")
     fun getCurrencyConverter(
-        @Header("apikey") apikey: String = ApiClient.API_KEY,
+        @Header("apikey") apikey: String ,
         @Query("from") from: String,
         @Query("to") to: String,
         @Query("amount") amount: Double

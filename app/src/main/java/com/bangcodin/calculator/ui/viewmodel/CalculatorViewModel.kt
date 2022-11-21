@@ -13,14 +13,14 @@ import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import javax.inject.Inject
 import kotlin.math.ln
 import kotlin.math.log10
 import kotlin.math.pow
 import kotlin.math.sqrt
 
-class CalculatorViewModel(
-    application: Application
-) : AndroidViewModel(application) {
+class CalculatorViewModel @Inject constructor(private  val application: Application) : ViewModel() {
 
     private val pi = "3.14159265"
     private var _tvInput = MutableLiveData<String>()
@@ -173,7 +173,7 @@ class CalculatorViewModel(
         try {
             result = evaluate(str)
         } catch (e: RuntimeException) {
-            Toast.makeText(getApplication(), e.message, Toast.LENGTH_SHORT).show()
+            Toast.makeText(application, e.message, Toast.LENGTH_SHORT).show()
         }
 
         val r = result.toString()
@@ -222,7 +222,7 @@ class CalculatorViewModel(
                 try {
                     x = parseFactor()
                 } catch (e: RuntimeException) {
-                    Toast.makeText(getApplication(), e.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(application, e.message, Toast.LENGTH_SHORT).show()
                 }
                 while (true) {
                     if (eat('*'.code)) x *= parseFactor()

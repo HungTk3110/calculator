@@ -1,11 +1,3 @@
-/*
- * *
- *  * Created by Nguyen Van Thai on 8/26/22, 11:00 PM
- *  * Copyright (c) 2022 . All rights reserved.
- *  * Last modified 8/26/22, 11:00 PM
- *
- */
-
 package com.bangcodin.calculator.ui.adapter
 
 import android.view.View

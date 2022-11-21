@@ -9,11 +9,12 @@
 package com.bangcodin.calculator.ui.viewmodel
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.bangcodin.calculator.utils.SharePreference
+import javax.inject.Inject
 
-class LanguageViewModel(application: Application) : AndroidViewModel(application) {
+class LanguageViewModel @Inject constructor(application: Application) : ViewModel() {
 
     val countryCode = MutableLiveData<String?>()
     val currentLanguage = MutableLiveData<String?>()

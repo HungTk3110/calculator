@@ -64,6 +64,7 @@ class LanguageAdapter(
         viewModel.currentLanguage.observe(lifecycleOwner){
             holder.binding.currentLanguage = it
         }
+
         holder.binding.root.setOnClickListener {
             callback.onLanguageChange(getItem(position))
             alpha.startNow()
@@ -75,28 +76,5 @@ class LanguageAdapter(
 interface Callback{
     fun onLanguageChange(language: Language)
 }
-//class LanguageAdapter(
-//    private val viewModel: LanguageViewModel,
-//    private val lifecycleOwner: LifecycleOwner
-//) :
-//    BaseListAdapter<Language>(ComparatorLanguage()) {
-//
-//    class LanguageVH(override val binding: ItemsRcvLanguageBinding) : DViewHolder(binding)
-//
-//    private lateinit var lanVH: LanguageVH
-//    override fun getLayoutResource(viewType: Int): Int = R.layout.items_rcv_language
-//
-//    override fun onBindData(holder: RecyclerView.ViewHolder, T: Any, position: Int) {
-//        lanVH = holder as LanguageVH
-//        lanVH.binding.language = getItem(position)
-//        viewModel.currentLanguage.observe(lifecycleOwner) {
-//            lanVH.binding.currentLanguage = it
-//        }
-//        lanVH.binding.root.setOnClickListener {
-//            viewModel.currentLanguage.value = getItem(position).label
-//        }
-//        lanVH.binding.executePendingBindings()
-//    }
-//
-//}
+
 

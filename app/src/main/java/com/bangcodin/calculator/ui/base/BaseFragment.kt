@@ -12,15 +12,15 @@ import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.bangcodin.calculator.R
 import com.bangcodin.calculator.utils.setAppLocale
+import dagger.android.support.DaggerFragment
 
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment : DaggerFragment() {
     private lateinit var binding: ViewBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        setAppLocale(requireContext(), "vi")
         binding =
             DataBindingUtil.inflate(layoutInflater, getLayout(), container, false)
         return binding.root

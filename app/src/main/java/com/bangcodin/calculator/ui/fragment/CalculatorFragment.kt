@@ -19,13 +19,11 @@ import com.bangcodin.calculator.ui.viewmodel.CalculatorViewModel
 
 class CalculatorFragment : BaseFragment() {
 
-    private lateinit var historyapp: HistoryDatabase
     private lateinit var binding: FragmentAdvancedCalculatorBinding
     private lateinit var calculatorViewModel: CalculatorViewModel
 
     override fun initView(viewBinding: ViewBinding) {
         this.binding = viewBinding as FragmentAdvancedCalculatorBinding
-        historyapp = HistoryDatabase.getDatabase(requireContext())
 
         binding.btnOperator.setOnClickListener {
             binding.cstLayoutKeyboard.cstLayoutTrigonometry.visibility = View.GONE

@@ -18,7 +18,7 @@ import com.bangcodin.calculator.databinding.FragmentHistoryBinding
 import com.bangcodin.calculator.ui.adapter.HistoryAdapter
 import com.bangcodin.calculator.ui.base.BaseFragment
 import com.bangcodin.calculator.ui.database.HistoryDatabase
-import com.bangcodin.calculator.ui.model.History
+import com.bangcodin.calculator.models.History
 import kotlin.concurrent.thread
 
 

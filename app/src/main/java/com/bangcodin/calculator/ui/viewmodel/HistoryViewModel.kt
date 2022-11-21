@@ -12,7 +12,7 @@
 //import androidx.lifecycle.MutableLiveData
 //import com.bangcodin.calculator.ui.base.BaseApplication.Companion.app
 //import com.bangcodin.calculator.ui.database.HistoryDatabase
-//import com.bangcodin.calculator.ui.model.History
+//import com.bangcodin.calculator.models.History
 //
 //class HistoryViewModel : AndroidViewModel(app) {
 //

@@ -1,12 +1,12 @@
 /*
  * *
- *  * Created by Trinh Khac Hung on 9/8/22, 9:56 AM
+ *  * Created by Trinh Khac Hung on 11/19/22, 12:43 PM
  *  * Copyright (c) 2022 . All rights reserved.
- *  * Last modified 9/8/22, 9:56 AM
+ *  * Last modified 11/19/22, 9:14 AM
  *
  */
 
-package com.bangcodin.calculator.ui.model
+package com.bangcodin.calculator.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

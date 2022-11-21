@@ -10,6 +10,7 @@ class SharePreference {
         const val PRIVATE_MODE: Int = 0
         const val IS_FIRST_LAUNCH = "first_launch"
         const val CURRENT_LANGUAGE = "current_language"
+        const val COUNTRY_CODE = "COUNTRY_CODE"
         const val VIEW_MODE = "view_mode"
 
         fun getIntPref(context: Context, key: String): Int {
