@@ -19,7 +19,7 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bangcodin.calculator.R
-import com.bangcodin.calculator.models.ItemLanguage
+import com.bangcodin.calculator.data.models.ItemLanguage
 
 class SettingLanguageAdapter(
     private val dataLanguage: List<ItemLanguage>,

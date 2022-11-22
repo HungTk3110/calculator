@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bangcodin.calculator.R
-import com.bangcodin.calculator.models.ItemKg
+import com.bangcodin.calculator.data.models.ItemKg
 
 
 class ItemKgAdapter : ListAdapter<ItemKg, ItemKgAdapter.ItemViewHD>(DiffCallBackItemKg()) {

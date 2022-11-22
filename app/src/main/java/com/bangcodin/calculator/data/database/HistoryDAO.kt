@@ -1,15 +1,15 @@
 /*
  * *
- *  * Created by Trinh Khac Hung on 9/8/22, 10:10 AM
+ *  * Created by Trinh Khac Hung on 11/22/22, 5:04 PM
  *  * Copyright (c) 2022 . All rights reserved.
- *  * Last modified 9/8/22, 10:10 AM
+ *  * Last modified 11/22/22, 5:04 PM
  *
  */
 
-package com.bangcodin.calculator.ui.database
+package com.bangcodin.calculator.data.database
 
 import androidx.room.*
-import com.bangcodin.calculator.models.History
+import com.bangcodin.calculator.data.models.History
 
 @Dao
 interface HistoryDAO {
@@ -18,7 +18,7 @@ interface HistoryDAO {
     fun deleteAllHistory();
 
     @Query("SELECT * FROM history_table  ")
-    fun getAllHistory() :List<History>
+    fun getAllHistory() :MutableList<History>
 
     @Insert
     fun insertHistory( history: History?)

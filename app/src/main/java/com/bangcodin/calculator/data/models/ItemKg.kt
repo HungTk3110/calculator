@@ -6,7 +6,7 @@
  *
  */
 
-package com.bangcodin.calculator.models
+package com.bangcodin.calculator.data.models
 
 import androidx.annotation.StringRes
 

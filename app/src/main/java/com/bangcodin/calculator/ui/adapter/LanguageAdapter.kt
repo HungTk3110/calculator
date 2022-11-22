@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bangcodin.calculator.R
 import com.bangcodin.calculator.databinding.ItemsRcvLanguageBinding
-import com.bangcodin.calculator.models.Language
+import com.bangcodin.calculator.data.models.Language
 import com.bangcodin.calculator.ui.viewmodel.LanguageViewModel
 
 class ComparatorLanguage : DiffUtil.ItemCallback<Language>() {

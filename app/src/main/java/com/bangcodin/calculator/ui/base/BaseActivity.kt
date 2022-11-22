@@ -3,11 +3,9 @@ package com.bangcodin.calculator.ui.base
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.bangcodin.calculator.utils.LocaleHelper
 import com.bangcodin.calculator.utils.SharePreference
-import com.bangcodin.calculator.utils.setAppLocale
 import dagger.android.support.DaggerAppCompatActivity
 
 
@@ -18,7 +16,6 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         checkCurrentLanguage()
-
         super.onCreate(savedInstanceState)
 
         binding = setLayout()
@@ -35,6 +32,7 @@ abstract class BaseActivity : DaggerAppCompatActivity() {
             LocaleHelper().setLocale(this, currentLanguage)
         }
     }
+
     override fun attachBaseContext(base: Context) {
         LocaleHelper().setLocale(base, LocaleHelper().getLanguage(base))
         super.attachBaseContext(LocaleHelper().onAttach(base))

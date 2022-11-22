@@ -9,7 +9,7 @@
 package com.bangcodin.calculator.data
 
 import com.bangcodin.calculator.R
-import com.bangcodin.calculator.models.*
+import com.bangcodin.calculator.data.models.*
 
 class Datasource {
     fun loadItem(): List<ItemBottomSheet> {
@@ -62,6 +62,7 @@ class Datasource {
         return listOf<ItemKg>(
             ItemKg(R.string.tvKg),
             ItemKg(R.string.tvG),
+            ItemKg(R.string.tvTon) ,
             ItemKg(R.string.tvLb),
             ItemKg(R.string.tvOz)
         )

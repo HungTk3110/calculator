@@ -20,6 +20,7 @@ class LengthFragment : BaseFragment(), BottomSheetLengthFragment.OptionConverter
         bottomSheetLength.optionConverterKm = this
         binding = viewBinding as FragmentLengthConversionBinding
         setOnClick()
+        initViewModel()
 
     }
 
@@ -27,7 +28,7 @@ class LengthFragment : BaseFragment(), BottomSheetLengthFragment.OptionConverter
         return R.layout.fragment_length_conversion
     }
 
-    override fun initViewModel() {
+    fun initViewModel() {
         lengthConverterViewModel =
             ViewModelProvider(this, viewmodelFactory)[LengthConverterViewModel::class.java]
         binding.length = lengthConverterViewModel

@@ -10,17 +10,17 @@ package com.bangcodin.calculator.ui.viewmodel
 
 import android.app.Application
 import android.widget.Toast
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.bangcodin.calculator.data.database.HistoryDatabase
 import javax.inject.Inject
 import kotlin.math.ln
 import kotlin.math.log10
 import kotlin.math.pow
 import kotlin.math.sqrt
 
-class CalculatorViewModel @Inject constructor(private  val application: Application) : ViewModel() {
+class CalculatorViewModel @Inject constructor(private val application: Application , private val historyDatabase: HistoryDatabase) : ViewModel() {
 
     private val pi = "3.14159265"
     private var _tvInput = MutableLiveData<String>()

@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bangcodin.calculator.R
-import com.bangcodin.calculator.models.ItemLength
+import com.bangcodin.calculator.data.models.ItemLength
 
 class ItemLengthAdapter : ListAdapter<ItemLength, ItemLengthAdapter.ItemViewHDLength>(DiffCallBackItemLength()){
     var listener: OnClickEventLength? = null

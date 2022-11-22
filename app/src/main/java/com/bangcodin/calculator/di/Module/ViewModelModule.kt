@@ -2,9 +2,7 @@ package com.bangcodin.calculator.di.Module
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.bangcodin.calculator.ui.viewmodel.CalculatorViewModel
-import com.bangcodin.calculator.ui.viewmodel.LanguageViewModel
-import com.bangcodin.calculator.ui.viewmodel.ViewModelFactory
+import com.bangcodin.calculator.ui.viewmodel.*
 import dagger.Binds
 import dagger.MapKey
 import dagger.Module
@@ -24,8 +22,33 @@ internal abstract class ViewModelModule {
 
     @Binds
     @IntoMap
+    @ViewModelKey(CurrencyConverterViewModel::class)
+    internal abstract fun bindsCurrencyConverterViewModel(currencyConverterViewModel: CurrencyConverterViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(HistoryViewModel::class)
+    internal abstract fun bindsHistoryViewModel(historyViewModel: HistoryViewModel): ViewModel
+
+    @Binds
+    @IntoMap
     @ViewModelKey(LanguageViewModel::class)
     internal abstract fun bindsLanguageViewModel(languageViewModel: LanguageViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(LengthConverterViewModel::class)
+    internal abstract fun bindsLengthConverterViewModel(lengthConverterViewModel: LengthConverterViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(TemperatureConverterViewModel::class)
+    internal abstract fun bindsTemperatureConverterViewModel(temperatureConverterViewModel: TemperatureConverterViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(WeightConverterViewModel::class)
+    internal abstract fun bindsWeightConverterViewModel(weightConverterViewModel: WeightConverterViewModel): ViewModel
 
 }
 

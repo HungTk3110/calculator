@@ -28,6 +28,7 @@ class CurrencyConversionFragment : BaseFragment(), BottomSheetNational.OptionCon
         binding = viewBinding as FragmentCurrencyConversionBinding
         bottomSheetNational.optionConverter = this
         setOnClickItem()
+        initViewModel()
         binding.tvNationalNeedConvert.setOnClickListener {
             bottomSheetNational.show(parentFragmentManager, "")
             currencyConverterViewModel.isCheckClick = false
@@ -39,7 +40,7 @@ class CurrencyConversionFragment : BaseFragment(), BottomSheetNational.OptionCon
         }
     }
 
-    override fun initViewModel(){
+     private fun initViewModel(){
         currencyConverterViewModel =
             ViewModelProvider(this, viewmodelFactory)[CurrencyConverterViewModel::class.java]
         binding.currency = currencyConverterViewModel

@@ -36,82 +36,84 @@ class LengthConverterViewModel @Inject constructor(private val application: Appl
         get() = _tvLengthConverter
 
     init {
-        _tvLengthConverted.value = ""
+        _tvInput.value = ""
         _tvResult.value = ""
+        _tvLengthConverted.value = "Km - Kilomet"
+        _tvLengthConverter.value = "m - Met"
     }
 
 
     fun addOne() {
         check0()
-        _tvLengthConverted.value += "1"
+        _tvInput.value += "1"
     }
 
     fun addTwo() {
         check0()
-        _tvLengthConverted.value += "2"
+        _tvInput.value += "2"
     }
 
     fun addThree() {
         check0()
-        _tvLengthConverted.value += "3"
+        _tvInput.value += "3"
     }
 
     fun addFive() {
         check0()
-        _tvLengthConverted.value += "5"
+        _tvInput.value += "5"
     }
 
     fun addSix() {
         check0()
-        _tvLengthConverted.value += "6"
+        _tvInput.value += "6"
     }
 
     fun addFour() {
         check0()
-        _tvLengthConverted.value += "4"
+        _tvInput.value += "4"
     }
 
     fun addSeven() {
         check0()
-        _tvLengthConverted.value += "7"
+        _tvInput.value += "7"
     }
 
     fun addEight() {
         check0()
-        _tvLengthConverted.value += "8"
+        _tvInput.value += "8"
     }
 
     fun addNine() {
         check0()
-        _tvLengthConverted.value += "9"
+        _tvInput.value += "9"
     }
 
     fun addZero() {
         check0()
-        _tvLengthConverted.value += "0"
+        _tvInput.value += "0"
     }
 
     fun addDot() {
         check0()
-        _tvLengthConverted.value += "."
+        _tvInput.value += "."
     }
 
     private fun check0() {
-        if (_tvLengthConverted.value.toString() == "0")
-            _tvLengthConverted.value = ""
+        if (_tvInput.value.toString() == "0")
+            _tvInput.value = ""
     }
 
     fun clearAll() {
-        _tvLengthConverted.value = ""
+        _tvInput.value = ""
         _tvResult.value = ""
     }
 
     fun delete() {
-        var str = _tvLengthConverted.value.toString()
+        var str = _tvInput.value.toString()
         if (str.isNotEmpty()) {
             str = str.substring(0, str.length - 1)
         }
-        _tvLengthConverted.value = str
+        _tvInput.value = str
     }
 
     fun handleSelectedLengthInput(position: Int) {
@@ -146,25 +148,25 @@ class LengthConverterViewModel @Inject constructor(private val application: Appl
         if (isCheckClick) {
             when (position) {
                 0 -> {
-                    _tvResult.value = "Km - Kilomet"
+                    _tvLengthConverter.value = "Km - Kilomet"
                 }
                 1 -> {
-                    _tvResult.value = "m - Met"
+                    _tvLengthConverter.value = "m - Met"
                 }
                 2 -> {
-                    _tvResult.value = "mm - Milimet"
+                    _tvLengthConverter.value = "mm - Milimet"
                 }
                 3 -> {
-                    _tvResult.value = "in - inch"
+                    _tvLengthConverter.value = "in - inch"
                 }
                 4 -> {
-                    _tvResult.value = "ft - Feet"
+                    _tvLengthConverter.value = "ft - Feet"
                 }
                 5 -> {
-                    _tvResult.value = "yd - Yard"
+                    _tvLengthConverter.value = "yd - Yard"
                 }
                 6 -> {
-                    _tvResult.value = "mi - Mile"
+                    _tvLengthConverter.value = "mi - Mile"
                 }
             }
         }
@@ -174,12 +176,12 @@ class LengthConverterViewModel @Inject constructor(private val application: Appl
         try {
             val inputPhysical = _tvLengthConverted.value.toString()
             val outputPhysical = _tvLengthConverter.value.toString()
-            val result = _tvInput.value.toString().toDouble()
+            val input = _tvInput.value.toString().toDouble()
             _tvResult.value =
-                converterLengthAction(inputPhysical, outputPhysical, result).toString()
+                converterLengthAction(inputPhysical, outputPhysical, input).toString()
             Log.d(
                 "resutl---> ",
-                converterLengthAction(inputPhysical, outputPhysical, result).toString()
+                converterLengthAction(inputPhysical, outputPhysical, input).toString()
             )
         } catch (ex: Exception) {
             Toast.makeText(application, "Input is invalid!", Toast.LENGTH_SHORT).show()

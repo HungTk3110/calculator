@@ -8,8 +8,8 @@
 
 package com.bangcodin.calculator.data.repository
 
-import com.bangcodin.calculator.api.ApiService
-import com.bangcodin.calculator.api.ConverterResponse
+import com.bangcodin.calculator.data.api.ApiService
+import com.bangcodin.calculator.data.api.ConverterResponse
 import com.bangcodin.calculator.ui.adapter.Callback
 import javax.inject.Inject
 import javax.inject.Singleton

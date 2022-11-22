@@ -1,12 +1,12 @@
 /*
  * *
- *  * Created by Nguyen Van Thai on 9/10/22, 9:09 AM
+ *  * Created by Trinh Khac Hung on 11/22/22, 5:02 PM
  *  * Copyright (c) 2022 . All rights reserved.
- *  * Last modified 9/10/22, 9:09 AM
+ *  * Last modified 11/21/22, 4:24 PM
  *
  */
 
-package com.bangcodin.calculator.api
+package com.bangcodin.calculator.data.api
 
 import com.google.gson.annotations.SerializedName
 

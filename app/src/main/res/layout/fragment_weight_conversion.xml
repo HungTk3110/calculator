@@ -6,6 +6,10 @@
 
     <data>
 
+        <variable
+            name="weight"
+            type="com.bangcodin.calculator.ui.viewmodel.WeightConverterViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,18 +59,18 @@
                 android:id="@+id/tv_weight_converted"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Kg - Kilogram"
+                android:text="@{weight.tvWeightConverted}"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_16ssp" />
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_24sdp"
-                android:src="@drawable/ic_vector_1"
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/_8sdp"
+                android:src="@drawable/ic_vector_1"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_16ssp"
-                />
+                android:textSize="@dimen/_16ssp" />
 
         </LinearLayout>
 
@@ -80,6 +84,7 @@
             android:background="@null"
             android:textColor="@color/orange_FB6514"
             android:textSize="@dimen/_18sdp"
+            android:text="@{weight.tvInput}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/weight_converted" />
 
@@ -95,20 +100,20 @@
                 android:id="@+id/tv_weight_converter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="G - Gam"
+                android:text="@{weight.tvWeightConverter}"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_16ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
             <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_24sdp"
-            android:src="@drawable/ic_vector_1"
-            android:layout_gravity="center"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_16ssp"
-            />
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:src="@drawable/ic_vector_1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp" />
 
         </LinearLayout>
 
@@ -121,6 +126,7 @@
             android:background="@null"
             android:textColor="@color/orange_FB6514"
             android:textSize="@dimen/_18ssp"
+            android:text="@{weight.tvResult}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/weight_converter" />
 
@@ -142,10 +148,10 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn9"
+            android:onClick="@{() -> weight.addNine()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_6_a"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView5"
-
             app:layout_constraintStart_toEndOf="@+id/textView3" />
 
         <ImageButton
@@ -154,6 +160,7 @@
             android:layout_height="0dp"
             android:layout_margin="@dimen/_6sdp"
             android:background="?attr/selectableItemBackground"
+            android:onClick="@{() -> weight.addEight()}"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn8"
             app:layout_constraintBottom_toTopOf="@+id/btn_5"
@@ -167,6 +174,7 @@
             android:layout_height="0dp"
             android:layout_margin="@dimen/_6sdp"
             android:background="?attr/selectableItemBackground"
+            android:onClick="@{() -> weight.addSeven()}"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn7"
             app:layout_constraintBottom_toTopOf="@+id/btn_4"
@@ -184,6 +192,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn6"
+            android:onClick="@{() -> weight.addSix()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_3"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView5"
@@ -198,6 +207,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn_conversion"
+            android:onClick="@{() -> weight.convert()}"
             app:layout_constraintBottom_toTopOf="@+id/img_button_del"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="@+id/img_button_del"
@@ -212,6 +222,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn_ac"
+            android:onClick="@{() -> weight.clearAll()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_cv"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="@+id/img_button_del"
@@ -226,6 +237,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn5"
+            android:onClick="@{() -> weight.addFive()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_2"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView3"
@@ -241,6 +253,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn4"
+            android:onClick="@{() -> weight.addFour()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_1"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView4"
@@ -280,6 +293,7 @@
             android:contentDescription="@string/app_name"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_0"
+            android:onClick="@{() -> weight.addZero()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="2:1"
             app:layout_constraintEnd_toStartOf="@+id/textView3"
@@ -295,6 +309,7 @@
             android:scaleType="fitCenter"
             android:src="@drawable/ic_dot"
             android:textSize="@dimen/_18sdp"
+            android:onClick="@{() -> weight.addDot()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView5"
@@ -311,6 +326,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn1"
+            android:onClick="@{() -> weight.addOne()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_0"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView4"
@@ -326,6 +342,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn2"
+            android:onClick="@{() -> weight.addTwo()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_0"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView3"
@@ -341,6 +358,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn3"
+            android:onClick="@{() -> weight.addThree()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_."
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView5"
@@ -355,6 +373,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_del"
+            android:onClick="@{() -> weight.delete()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:2"
             app:layout_constraintEnd_toEndOf="parent"

@@ -12,27 +12,29 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.bangcodin.calculator.R
 import com.bangcodin.calculator.databinding.ActivityLanguageBinding
-import com.bangcodin.calculator.models.Language
+import com.bangcodin.calculator.data.models.Language
 import com.bangcodin.calculator.ui.adapter.Callback
 import com.bangcodin.calculator.ui.adapter.LanguageAdapter
 import com.bangcodin.calculator.ui.base.BaseActivity
 import com.bangcodin.calculator.ui.viewmodel.LanguageViewModel
+import com.bangcodin.calculator.ui.viewmodel.WeightConverterViewModel
 import com.bangcodin.calculator.utils.LocaleHelper
 import com.bangcodin.calculator.utils.SharePreference
-import com.bangcodin.calculator.utils.setAppLocale
-import com.shashank.sony.fancytoastlib.FancyToast
-import java.util.Locale
+import javax.inject.Inject
 
 class LanguageActivity : BaseActivity(), Callback {
+
+    @Inject
+    lateinit var viewmodelFactory: ViewModelProvider.Factory
     private lateinit var binding: ActivityLanguageBinding
     private lateinit var languageViewModel: LanguageViewModel
     override fun setLayout(): ViewBinding =
-        ActivityLanguageBinding.inflate(layoutInflater) as ViewBinding
+        ActivityLanguageBinding.inflate(layoutInflater)
 
     override fun initView(binding: ViewBinding) {
         this.binding = binding as ActivityLanguageBinding
 
-        languageViewModel = ViewModelProvider(this)[LanguageViewModel::class.java]
+        initViewModel()
         LanguageAdapter.callback = this
         setRCVLanguage()
         binding.btnOk.setOnClickListener {
@@ -40,11 +42,18 @@ class LanguageActivity : BaseActivity(), Callback {
         }
     }
 
+    private fun initViewModel() {
+        languageViewModel = ViewModelProvider(this, viewmodelFactory)[LanguageViewModel::class.java]
+    }
     private fun setClickBtnOk() {
         LocaleHelper().setLocale(this, language = languageViewModel.countryCode.value.toString())
-        SharePreference.setStringPref(application, SharePreference.COUNTRY_CODE,languageViewModel.countryCode.value.toString())
+        SharePreference.setStringPref(
+            application,
+            SharePreference.COUNTRY_CODE,
+            languageViewModel.countryCode.value.toString()
+        )
         recreate()
-        openActivity(MainActivity::class.java,false)
+        openActivity(MainActivity::class.java, false)
     }
 
     private fun setRCVLanguage() {

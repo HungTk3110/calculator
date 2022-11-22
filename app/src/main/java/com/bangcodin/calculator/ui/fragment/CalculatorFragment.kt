@@ -14,8 +14,9 @@ import androidx.viewbinding.ViewBinding
 import com.bangcodin.calculator.R
 import com.bangcodin.calculator.databinding.FragmentAdvancedCalculatorBinding
 import com.bangcodin.calculator.ui.base.BaseFragment
-import com.bangcodin.calculator.ui.database.HistoryDatabase
+import com.bangcodin.calculator.data.database.HistoryDatabase
 import com.bangcodin.calculator.ui.viewmodel.CalculatorViewModel
+import com.bangcodin.calculator.ui.viewmodel.CurrencyConverterViewModel
 import javax.inject.Inject
 
 class CalculatorFragment : BaseFragment() {
@@ -28,6 +29,7 @@ class CalculatorFragment : BaseFragment() {
     override fun initView(viewBinding: ViewBinding) {
         this.binding = viewBinding as FragmentAdvancedCalculatorBinding
 
+        initViewModel()
         binding.btnOperator.setOnClickListener {
             binding.cstLayoutKeyboard.cstLayoutTrigonometry.visibility = View.GONE
             binding.cstLayoutKeyboard.cstLayoutOperator.visibility = View.VISIBLE
@@ -37,7 +39,10 @@ class CalculatorFragment : BaseFragment() {
             binding.cstLayoutKeyboard.cstLayoutOperator.visibility = View.GONE
         }
 
-        calculatorViewModel = ViewModelProvider(this,viewmodelFactory)[CalculatorViewModel::class.java]
+    }
+
+    private fun initViewModel(){
+        calculatorViewModel = ViewModelProvider(this,viewmodelFactory).get(CalculatorViewModel::class.java)
         binding.calculatorViewModell = calculatorViewModel
         binding.cstLayoutKeyboard.calculatorViewModel = calculatorViewModel
         binding.lifecycleOwner = this

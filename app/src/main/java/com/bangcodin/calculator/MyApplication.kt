@@ -1,5 +1,6 @@
 package com.bangcodin.calculator
 
+import com.bangcodin.calculator.di.component.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 

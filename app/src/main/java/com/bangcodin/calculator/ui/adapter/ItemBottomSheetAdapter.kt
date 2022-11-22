@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bangcodin.calculator.R
-import com.bangcodin.calculator.models.ItemBottomSheet
+import com.bangcodin.calculator.data.models.ItemBottomSheet
 
 
 class ItemBottomSheetAdapter: ListAdapter<ItemBottomSheet, ItemBottomSheetAdapter.ItemViewHd>(DiffCallBack()) {

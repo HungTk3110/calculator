@@ -5,7 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="temperature"
+            type="com.bangcodin.calculator.ui.viewmodel.TemperatureConverterViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -48,7 +50,7 @@
             android:layout_marginTop="@dimen/_22sdp"
             android:layout_marginStart="@dimen/_16sdp"
             android:textSize="@dimen/_16ssp"
-            android:text="Celsius "
+            android:text="@{temperature.type}"
             android:drawableEnd="@drawable/ic_vector_1"
             android:textColor="@color/orange_FB6514"
             app:layout_constraintStart_toStartOf="parent"
@@ -62,6 +64,7 @@
             android:layout_marginEnd="@dimen/_8sdp"
             android:gravity="right"
             android:hint="0"
+            android:text="@{temperature.tvInput}"
             android:textColorHint="@color/gray_6F737E"
             android:textColor="@color/orange_FB6514"
             android:textSize="@dimen/_14ssp"
@@ -76,6 +79,7 @@
             android:layout_marginTop="@dimen/_22sdp"
             android:textColor="@color/white"
             android:textSize="@dimen/_16ssp"
+            android:text="@{temperature.tvAnswer}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/type" />
 
@@ -86,6 +90,7 @@
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_22sdp"
             android:textColor="@color/white"
+            android:text="@{temperature.tvAnswer1}"
             android:textSize="@dimen/_16ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_answer" />
@@ -99,6 +104,7 @@
             android:gravity="right"
             android:textColor="@color/white"
             android:textSize="@dimen/_16ssp"
+            android:text="@{temperature.tvResult}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_input" />
 
@@ -108,7 +114,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_22sdp"
             android:layout_marginEnd="@dimen/_8sdp"
-            android:text=""
+            android:text="@{temperature.tvResult1}"
             android:textColor="@color/white"
             android:textSize="@dimen/_16ssp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -124,6 +130,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn9"
+            android:onClick="@{() -> temperature.addNine()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_6_a"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView5"
@@ -137,6 +144,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn8"
+            android:onClick="@{() -> temperature.addEight()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_5"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView3"
@@ -150,6 +158,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn7"
+            android:onClick="@{() -> temperature.addSeven()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_4"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView4"
@@ -165,6 +174,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn6"
+            android:onClick="@{() -> temperature.addSix()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_3"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView5"
@@ -178,10 +188,10 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn_conversion"
+            android:onClick="@{() -> temperature.convert()}"
             app:layout_constraintBottom_toTopOf="@+id/img_button_del"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="@+id/img_button_del"
-
             app:layout_constraintStart_toEndOf="@+id/btn_6_a" />
 
         <ImageButton
@@ -192,6 +202,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn_ac"
+            android:onClick="@{() -> temperature.clearAll()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_cv"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="@+id/img_button_del"
@@ -206,10 +217,10 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn5"
+            android:onClick="@{() -> temperature.addFive()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_2"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView3"
-
             app:layout_constraintStart_toEndOf="@+id/textView4" />
 
         <ImageButton
@@ -221,6 +232,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn4"
+            android:onClick="@{() -> temperature.addFour()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_1"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView4"
@@ -260,6 +272,7 @@
             android:contentDescription="@string/app_name"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_0"
+            android:onClick="@{() -> temperature.addZero()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="2:1"
             app:layout_constraintEnd_toStartOf="@+id/textView3"
@@ -275,10 +288,10 @@
             android:scaleType="fitCenter"
             android:src="@drawable/ic_dot"
             android:textSize="@dimen/_18sdp"
+            android:onClick="@{() -> temperature.addDot()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView5"
-
             app:layout_constraintStart_toEndOf="@+id/btn_0" />
 
 
@@ -291,10 +304,10 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn1"
+            android:onClick="@{() -> temperature.addOne()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_0"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView4"
-
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton
@@ -306,10 +319,10 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn2"
+            android:onClick="@{() -> temperature.addTwo()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_0"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView3"
-
             app:layout_constraintStart_toEndOf="@+id/textView4" />
 
         <ImageButton
@@ -321,6 +334,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_btn3"
+            android:onClick="@{() -> temperature.addThree()}"
             app:layout_constraintBottom_toTopOf="@+id/btn_."
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView5"
@@ -335,6 +349,7 @@
             android:background="?attr/selectableItemBackground"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_del"
+            android:onClick="@{() -> temperature.delete()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:2"
             app:layout_constraintEnd_toEndOf="parent"

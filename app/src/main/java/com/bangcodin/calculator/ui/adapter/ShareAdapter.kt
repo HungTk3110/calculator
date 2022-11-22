@@ -15,7 +15,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bangcodin.calculator.R
-import com.bangcodin.calculator.models.ItemShare
+import com.bangcodin.calculator.data.models.ItemShare
 
 class ShareAdapter(
     private val dataShare: List<ItemShare>

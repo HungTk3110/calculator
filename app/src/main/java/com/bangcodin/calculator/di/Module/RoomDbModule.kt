@@ -2,8 +2,8 @@ package com.bangcodin.calculator.di.Module
 
 import android.app.Application
 import androidx.room.Room
-import com.bangcodin.calculator.ui.database.HistoryDAO
-import com.bangcodin.calculator.ui.database.HistoryDatabase
+import com.bangcodin.calculator.data.database.HistoryDAO
+import com.bangcodin.calculator.data.database.HistoryDatabase
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

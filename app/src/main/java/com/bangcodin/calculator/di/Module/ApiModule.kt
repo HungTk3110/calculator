@@ -1,6 +1,6 @@
 package com.bangcodin.calculator.di.Module
 
-import com.bangcodin.calculator.api.ApiService
+import com.bangcodin.calculator.data.api.ApiService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module

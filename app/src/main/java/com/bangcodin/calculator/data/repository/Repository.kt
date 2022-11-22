@@ -8,7 +8,7 @@
 
 package com.bangcodin.calculator.data.repository
 
-import com.bangcodin.calculator.api.ConverterResponse
+import com.bangcodin.calculator.data.api.ConverterResponse
 
 interface Repository {
      fun callApi(from: String, to: String, amount: Double) : ConverterResponse

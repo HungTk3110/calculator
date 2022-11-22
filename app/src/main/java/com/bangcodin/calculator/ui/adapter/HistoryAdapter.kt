@@ -15,13 +15,13 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bangcodin.calculator.R
-import com.bangcodin.calculator.models.History
+import com.bangcodin.calculator.data.models.History
 
 class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.MyViewHolder>(){
-    var items  = ArrayList<History>()
+    var items  = mutableListOf<History>()
     var listener: RowClickListener?= null
 
-    fun setListData(data: ArrayList<History>) {
+    fun setListData(data: MutableList<History>) {
         this.items = data
     }
 

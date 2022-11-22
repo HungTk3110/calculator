@@ -19,4 +19,4 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keep class com.bangcodin.calculator.models.Language
+-keep class com.bangcodin.calculator.data.models.Language
