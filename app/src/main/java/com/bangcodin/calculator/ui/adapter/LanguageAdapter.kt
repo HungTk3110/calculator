@@ -56,7 +56,7 @@ class LanguageAdapter(
 
     override fun onBindViewHolder(holder: LanguageVH, position: Int) {
         val alpha = AlphaAnimation(0f,1f)
-        alpha.duration = 200
+        alpha.duration = 300
         alpha.fillAfter = true
         holder.binding.root.animation = alpha
 

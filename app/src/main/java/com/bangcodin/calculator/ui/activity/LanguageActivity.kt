@@ -60,10 +60,10 @@ class LanguageActivity : BaseActivity(), Callback {
         val adapter = LanguageAdapter(languageViewModel, this)
         binding.rcvLanguage.adapter = adapter
         val listLanguage = ArrayList<Language>()
-        listLanguage.add(Language("en", "English", R.drawable.english, false))
-        listLanguage.add(Language("kr", "Korean", R.drawable.kr, false))
-        listLanguage.add(Language("vi", "Vietnam", R.drawable.ic_vietnam, false))
-        listLanguage.add(Language("jp", "Japan", R.drawable.jp, false))
+        listLanguage.add(Language("en", "English", R.drawable.english))
+        listLanguage.add(Language("kr", "Korean", R.drawable.kr))
+        listLanguage.add(Language("vi", "Vietnam", R.drawable.ic_vietnam))
+        listLanguage.add(Language("jp", "Japan", R.drawable.jp))
         adapter.submitList(listLanguage)
     }
 
@@ -71,7 +71,6 @@ class LanguageActivity : BaseActivity(), Callback {
         languageViewModel.currentLanguage.value = language.label
         SharePreference.setStringPref(application, SharePreference.CURRENT_LANGUAGE, language.label)
         languageViewModel.countryCode.value = language.countryCode
-        language.check = true
 //        FancyToast.makeText(this, languageViewModel.countryCode.value.toString(),FancyToast.LENGTH_SHORT, FancyToast.WARNING, false).show()
     }
 }

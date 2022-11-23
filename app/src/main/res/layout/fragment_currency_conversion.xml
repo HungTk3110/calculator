@@ -130,7 +130,7 @@
             app:layout_constraintHorizontal_weight="3"
             android:text="@{currency.tvResult}"
             android:ellipsize="end"
-            android:maxLines="1"
+            android:maxLines="5"
             android:textColor="@color/white"
             android:textSize="@dimen/_18ssp"
             app:layout_constraintStart_toStartOf="parent"

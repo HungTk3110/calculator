@@ -58,8 +58,8 @@ class CurrencyConverterViewModel @Inject constructor(private val application: Ap
     init {
         _tvInput.value = ""
         _tvResult.value = ""
-        _tvNationalNeedConvert.value = "VND - Vietnames Dong"
-        _tvNationalConverted.value = "USD - US Dollar "
+        _tvNationalNeedConvert.value = "USD - US Dollar "
+        _tvNationalConverted.value = "VND - Vietnames Dong "
         _imgNationalNeedConvert.value = R.drawable.ic_vietnam
         _imgNationalConverted.value = R.drawable.ic_united_states
     }
@@ -229,7 +229,8 @@ class CurrencyConverterViewModel @Inject constructor(private val application: Ap
 
             from = mapLanguageCode[_tvNationalNeedConvert.value].toString()
             to = mapLanguageCode[_tvNationalConverted.value].toString()
-            repository.callApi(from, to, converter)
+            val converterResponse = repository.callApi(from, to, converter)
+            _tvResult.value = converterResponse.result.toString()
         } else {
             Toast.makeText(application, "Please enter input amount!", Toast.LENGTH_SHORT).show()
         }
