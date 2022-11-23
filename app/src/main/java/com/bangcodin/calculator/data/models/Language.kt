@@ -11,6 +11,5 @@ package com.bangcodin.calculator.data.models
 import androidx.annotation.Keep
 
 @Keep
-class Language(@Keep val countryCode: String,@Keep val label: String, @Keep val flag: Int) {
-    constructor() : this("", "", 0)
+class Language(@Keep val countryCode: String,@Keep val label: String, @Keep val flag: Int , var check : Boolean? = false) {
 }

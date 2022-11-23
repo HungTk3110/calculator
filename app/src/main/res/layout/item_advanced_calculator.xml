@@ -406,7 +406,7 @@
             android:id="@+id/cst_layout_Operator"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -419,7 +419,8 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn_ac"
-                app:layout_constraintBottom_toTopOf="@id/btn_8"
+                android:onClick="@{() -> CalculatorViewModel.clearAll()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_7"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@id/btn_ngoac_trai"
                 app:layout_constraintStart_toStartOf="parent"
@@ -433,6 +434,7 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn_nd_trai"
+                android:onClick="@{() -> CalculatorViewModel.addNgoacTrai()}"
                 app:layout_constraintBottom_toTopOf="@id/btn_8"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@id/btn_ngoac_phai"
@@ -447,7 +449,8 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_bnt_nd_phai"
-                app:layout_constraintBottom_toTopOf="@id/btn_8"
+                android:onClick="@{() -> CalculatorViewModel.addNgoacPhai()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_9"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@id/btn_delete"
                 app:layout_constraintStart_toEndOf="@+id/btn_ngoac_trai"
@@ -461,6 +464,7 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn_delete"
+                android:onClick="@{() -> CalculatorViewModel.delete()}"
                 app:layout_constraintBottom_toTopOf="@id/btn_mathematics"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@id/btn_division"
@@ -475,6 +479,7 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn_division"
+                android:onClick="@{() -> CalculatorViewModel.division()}"
                 app:layout_constraintBottom_toTopOf="@id/btn_multiplied"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -489,6 +494,7 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn7"
+                android:onClick="@{() -> CalculatorViewModel.addSeven()}"
                 app:layout_constraintBottom_toTopOf="@id/btn_4"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@id/btn_8"
@@ -503,6 +509,7 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn8"
+                android:onClick="@{() -> CalculatorViewModel.addEight()}"
                 app:layout_constraintBottom_toTopOf="@id/btn_5"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@id/btn_9"
@@ -517,6 +524,7 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn9"
+                android:onClick="@{() -> CalculatorViewModel.addNine()}"
                 app:layout_constraintBottom_toTopOf="@id/btn_6"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@id/btn_mathematics"
@@ -545,6 +553,7 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn_multiplied"
+                android:onClick="@{() -> CalculatorViewModel.multiplied()}"
                 app:layout_constraintBottom_toTopOf="@id/btn_minus"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -559,11 +568,12 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn4"
+                android:onClick="@{() -> CalculatorViewModel.addFour()}"
                 app:layout_constraintBottom_toTopOf="@id/btn_1"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/btn_ngoac_trai"
+                app:layout_constraintEnd_toStartOf="@id/btn_5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_8" />
+                app:layout_constraintTop_toBottomOf="@id/btn_7" />
 
             <ImageButton
                 android:id="@+id/btn_5"
@@ -573,10 +583,11 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn5"
+                android:onClick="@{() -> CalculatorViewModel.addFive()}"
                 app:layout_constraintBottom_toTopOf="@id/btn_2"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/btn_ngoac_phai"
-                app:layout_constraintStart_toEndOf="@+id/btn_AC"
+                app:layout_constraintEnd_toStartOf="@id/btn_6"
+                app:layout_constraintStart_toEndOf="@+id/btn_4"
                 app:layout_constraintTop_toBottomOf="@+id/btn_8" />
 
             <ImageButton
@@ -587,10 +598,11 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn6"
+                android:onClick="@{() -> CalculatorViewModel.addSix()}"
                 app:layout_constraintBottom_toTopOf="@id/btn_3"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/btn_delete"
-                app:layout_constraintStart_toEndOf="@+id/btn_ngoac_trai"
+                app:layout_constraintEnd_toStartOf="@id/btn_pow"
+                app:layout_constraintStart_toEndOf="@+id/btn_5"
                 app:layout_constraintTop_toBottomOf="@+id/btn_9" />
 
             <ImageButton
@@ -603,8 +615,8 @@
                 android:src="@drawable/ic_btn_pow"
                 app:layout_constraintBottom_toTopOf="@id/btn_sqrt"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/btn_division"
-                app:layout_constraintStart_toEndOf="@+id/btn_ngoac_phai"
+                app:layout_constraintEnd_toStartOf="@id/btn_minus"
+                app:layout_constraintStart_toEndOf="@+id/btn_6"
                 app:layout_constraintTop_toBottomOf="@+id/btn_mathematics" />
 
             <ImageButton
@@ -615,10 +627,11 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn_minus"
+                android:onClick="@{() -> CalculatorViewModel.minus()}"
                 app:layout_constraintBottom_toTopOf="@id/btn_plus"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btn_delete"
+                app:layout_constraintStart_toEndOf="@+id/btn_pow"
                 app:layout_constraintTop_toBottomOf="@+id/btn_multiplied" />
 
             <ImageButton
@@ -629,9 +642,10 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn1"
+                android:onClick="@{() -> CalculatorViewModel.addOne()}"
                 app:layout_constraintBottom_toTopOf="@id/btn_0"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/btn_8"
+                app:layout_constraintEnd_toStartOf="@id/btn_2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn_4" />
 
@@ -643,9 +657,11 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn2"
+                android:onClick="@{() -> CalculatorViewModel.addTwo()}"
                 app:layout_constraintBottom_toTopOf="@id/btnDotTrigonometry"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/btn_9"
+                app:layout_constraintEnd_toStartOf="@id/btn_3"
+                app:layout_constraintStart_toEndOf="@id/btn_1"
                 app:layout_constraintTop_toBottomOf="@+id/btn_5" />
 
             <ImageButton
@@ -656,9 +672,11 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn3"
+                android:onClick="@{() -> CalculatorViewModel.addThree()}"
                 app:layout_constraintBottom_toTopOf="@id/btn_pi"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/btn_mathematics"
+                app:layout_constraintStart_toEndOf="@id/btn_2"
+                app:layout_constraintEnd_toStartOf="@id/btn_sqrt"
                 app:layout_constraintTop_toBottomOf="@+id/btn_6" />
 
             <ImageButton
@@ -671,9 +689,9 @@
                 android:src="@drawable/ic_btn_sqrt"
                 app:layout_constraintBottom_toTopOf="@id/btn_cot"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/btn_multiplied"
+                app:layout_constraintEnd_toStartOf="@id/btn_plus"
                 app:layout_constraintHorizontal_bias="0.483"
-                app:layout_constraintStart_toEndOf="@+id/btn_9"
+                app:layout_constraintStart_toEndOf="@+id/btn_3"
                 app:layout_constraintTop_toBottomOf="@+id/btn_pow" />
 
             <ImageButton
@@ -684,19 +702,22 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn_plush"
+                android:onClick="@{() -> CalculatorViewModel.push()}"
                 app:layout_constraintBottom_toTopOf="@id/btn_equals"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btn_mathematics"
+                app:layout_constraintStart_toEndOf="@+id/btn_sqrt"
                 app:layout_constraintTop_toBottomOf="@+id/btn_minus" />
 
             <ImageButton
                 android:id="@+id/btn_0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_margin="@dimen/_6sdp"
                 android:background="?attr/selectableItemBackground"
                 android:src="@drawable/ic_btn_0"
+                android:scaleType="fitCenter"
+                android:onClick="@{() -> CalculatorViewModel.addZero()}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@id/btnDotTrigonometry"
@@ -711,10 +732,11 @@
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_dot"
+                android:onClick="@{() -> CalculatorViewModel.addDot()}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/btn_ngoac_phai"
-                app:layout_constraintStart_toEndOf="@+id/btn_AC"
+                app:layout_constraintEnd_toStartOf="@id/btn_pi"
+                app:layout_constraintStart_toEndOf="@+id/btn_0"
                 app:layout_constraintTop_toBottomOf="@+id/btn_2" />
 
             <ImageButton
@@ -727,8 +749,8 @@
                 android:src="@drawable/ic_btn_pi"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/btn_delete"
-                app:layout_constraintStart_toEndOf="@+id/btn_ngoac_trai"
+                app:layout_constraintEnd_toStartOf="@id/btn_cot"
+                app:layout_constraintStart_toEndOf="@+id/btnDotTrigonometry"
                 app:layout_constraintTop_toBottomOf="@+id/btn_3" />
 
             <ImageButton
@@ -741,8 +763,8 @@
                 android:src="@drawable/ic_btn_cot"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/btn_division"
-                app:layout_constraintStart_toEndOf="@+id/btn_ngoac_phai"
+                app:layout_constraintEnd_toStartOf="@id/btn_equals"
+                app:layout_constraintStart_toEndOf="@+id/btn_pi"
                 app:layout_constraintTop_toBottomOf="@+id/btn_sqrt" />
 
             <ImageButton
@@ -750,13 +772,14 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/_6sdp"
+                android:onClick="@{() -> CalculatorViewModel.equal()}"
                 android:background="?attr/selectableItemBackground"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn_equals"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btn_delete"
+                app:layout_constraintStart_toEndOf="@+id/btn_cot"
                 app:layout_constraintTop_toBottomOf="@+id/btn_plus" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

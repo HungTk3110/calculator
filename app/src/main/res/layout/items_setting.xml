@@ -29,7 +29,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/item_english"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
+                android:layout_height="@dimen/_55sdp"
                 android:background="@color/neutrals_color_700"
                 android:padding="20dp">
 
@@ -82,7 +82,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/item_rate"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
+                android:layout_height="@dimen/_55sdp"
                 android:background="@color/neutrals_color_700"
                 android:padding="20dp">
 
@@ -135,7 +135,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/item_share"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
+                android:layout_height="@dimen/_55sdp"
                 android:background="@color/neutrals_color_700"
                 android:padding="20dp">
 
@@ -188,7 +188,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/item_term"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
+                android:layout_height="@dimen/_55sdp"
                 android:background="@color/neutrals_color_700"
                 android:padding="20dp">
 

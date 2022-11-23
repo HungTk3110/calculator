@@ -34,7 +34,6 @@ class   SettingFragment : BaseFragment() {
         val share = ShareFragment()
         val term = TermFragment()
         binding.iclListSetting.itemEnglish.setOnClickListener {
-//            pushScreenAsNormalWithT6(language, LanguageFragment::class.java.name)
             openActivity(LanguageActivity::class.java)
         }
         binding.iclListSetting.itemShare.setOnClickListener {
