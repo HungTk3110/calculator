@@ -9,17 +9,24 @@
 package com.bangcodin.calculator.ui.viewmodel
 
 import android.app.Application
-import android.widget.ImageView
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.bangcodin.calculator.R
+import com.bangcodin.calculator.data.api.API_KEY
+import com.bangcodin.calculator.data.api.ConverterResponse
 import com.bangcodin.calculator.data.repository.Repository
-import com.bangcodin.calculator.ui.adapter.setImageFromResource
+import com.google.gson.Gson
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class CurrencyConverterViewModel @Inject constructor(private val application: Application , private val repository: Repository): ViewModel() {
+class CurrencyConverterViewModel @Inject constructor(
+    private val application: Application,
+    private val repository: Repository
+) : ViewModel() {
 
     private val mapLanguageCode: HashMap<String, String> = hashMapOf(
         "USD - US Dollar " to "USD",
@@ -28,7 +35,7 @@ class CurrencyConverterViewModel @Inject constructor(private val application: Ap
         "IDR - Indonesian Rupiah " to "IDR",
         "KRW - South Korean Won " to "KRW",
         "JPY - Japanese Yen " to "JPY",
-        "VND - Vietnames Dong" to "VND"
+        "VND - Vietnames Dong " to "VND"
     )
     private var from = ""
     private var to = ""
@@ -147,31 +154,31 @@ class CurrencyConverterViewModel @Inject constructor(private val application: Ap
                 }
 
                 1 -> {
-                    _imgNationalNeedConvert.value =R.drawable.euro
+                    _imgNationalNeedConvert.value = R.drawable.euro
                     _tvNationalNeedConvert.value = "EUR - Euro "
                 }
 
                 2 -> {
-                    _imgNationalNeedConvert.value =R.drawable.india
+                    _imgNationalNeedConvert.value = R.drawable.india
                     _tvNationalNeedConvert.value = "INR - Indian Rupee "
                 }
 
                 3 -> {
-                    _imgNationalNeedConvert.value =R.drawable.indo
+                    _imgNationalNeedConvert.value = R.drawable.indo
                     _tvNationalNeedConvert.value = "IDR - Indonesian Rupiah "
                 }
 
                 4 -> {
-                    _imgNationalNeedConvert.value =R.drawable.kr
+                    _imgNationalNeedConvert.value = R.drawable.kr
                     _tvNationalNeedConvert.value = "KRW - South Korean Won "
                 }
 
                 5 -> {
-                    _imgNationalNeedConvert.value =R.drawable.jp
+                    _imgNationalNeedConvert.value = R.drawable.jp
                     _tvNationalNeedConvert.value = "JPY - Japanese Yen "
                 }
                 6 -> {
-                    _imgNationalNeedConvert.value =R.drawable.ic_vietnam
+                    _imgNationalNeedConvert.value = R.drawable.ic_vietnam
                     _tvNationalNeedConvert.value = "VND - Vietnames Dong"
                 }
             }
@@ -218,21 +225,25 @@ class CurrencyConverterViewModel @Inject constructor(private val application: Ap
         }
     }
 
-    fun Convert(){
-        var converter: Double = 0.0
+    fun Convert() {
+        var converterResponse = ConverterResponse("0","0","0")
+        var converter = 0.0
         if (_tvInput.value.toString().trim() != "") {
             try {
                 converter = _tvInput.value.toString().toDouble()
             } catch (ex: Exception) {
                 Toast.makeText(application, "Input is invalid!", Toast.LENGTH_SHORT).show()
             }
-
             from = mapLanguageCode[_tvNationalNeedConvert.value].toString()
             to = mapLanguageCode[_tvNationalConverted.value].toString()
-            val converterResponse = repository.callApi(from, to, converter)
+            Log.d("oaaaa", from + "///" + to + "///" + converter)
+            viewModelScope.launch {
+                converterResponse = repository.callApi(from, to, converter)
+            }
             _tvResult.value = converterResponse.result.toString()
         } else {
             Toast.makeText(application, "Please enter input amount!", Toast.LENGTH_SHORT).show()
         }
+
     }
 }

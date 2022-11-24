@@ -9,7 +9,6 @@
 package com.bangcodin.calculator.ui.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AlphaAnimation
 import androidx.databinding.DataBindingUtil
@@ -18,8 +17,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bangcodin.calculator.R
-import com.bangcodin.calculator.databinding.ItemsRcvLanguageBinding
 import com.bangcodin.calculator.data.models.Language
+import com.bangcodin.calculator.databinding.ItemsRcvLanguageBinding
 import com.bangcodin.calculator.ui.viewmodel.LanguageViewModel
 
 class ComparatorLanguage : DiffUtil.ItemCallback<Language>() {
@@ -40,9 +39,10 @@ class LanguageAdapter(
 
     class LanguageVH(val binding: ItemsRcvLanguageBinding) : RecyclerView.ViewHolder(binding.root)
 
-    companion object{
+    companion object {
         lateinit var callback: Callback
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LanguageVH {
         return LanguageVH(
             DataBindingUtil.inflate(
@@ -59,7 +59,6 @@ class LanguageAdapter(
         alpha.duration = 300
         alpha.fillAfter = true
         holder.binding.root.animation = alpha
-
         holder.binding.language = getItem(position)
         viewModel.currentLanguage.observe(lifecycleOwner){
             holder.binding.currentLanguage = it
@@ -73,7 +72,7 @@ class LanguageAdapter(
     }
 }
 
-interface Callback{
+interface Callback {
     fun onLanguageChange(language: Language)
 }
 

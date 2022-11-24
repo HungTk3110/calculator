@@ -9,6 +9,9 @@
 package com.bangcodin.calculator.ui.viewmodel
 
 import android.app.Application
+import android.view.View
+import android.view.animation.AlphaAnimation
+import android.view.animation.RotateAnimation
 import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -20,7 +23,10 @@ import kotlin.math.log10
 import kotlin.math.pow
 import kotlin.math.sqrt
 
-class CalculatorViewModel @Inject constructor(private val application: Application , private val historyDatabase: HistoryDatabase) : ViewModel() {
+class CalculatorViewModel @Inject constructor(
+    private val application: Application,
+    private val historyDatabase: HistoryDatabase
+) : ViewModel() {
 
     private val pi = "3.14159265"
     private var _tvInput = MutableLiveData<String>()

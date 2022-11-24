@@ -14,7 +14,7 @@ import retrofit2.http.*
 interface ApiService {
 
     @GET("convert?")
-    fun getCurrencyConverter(
+    suspend fun getCurrencyConverter(
         @Header("apikey") apikey: String  = API_KEY,
         @Query("from") from: String,
         @Query("to") to: String,
