@@ -9,14 +9,13 @@
 package com.bangcodin.calculator.ui.fragment
 
 import android.view.View
+import android.view.animation.AlphaAnimation
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.bangcodin.calculator.R
 import com.bangcodin.calculator.databinding.FragmentAdvancedCalculatorBinding
 import com.bangcodin.calculator.ui.base.BaseFragment
-import com.bangcodin.calculator.data.database.HistoryDatabase
 import com.bangcodin.calculator.ui.viewmodel.CalculatorViewModel
-import com.bangcodin.calculator.ui.viewmodel.CurrencyConverterViewModel
 import javax.inject.Inject
 
 class CalculatorFragment : BaseFragment() {
@@ -29,20 +28,32 @@ class CalculatorFragment : BaseFragment() {
     override fun initView(viewBinding: ViewBinding) {
         this.binding = viewBinding as FragmentAdvancedCalculatorBinding
 
+        binding.btnTrigonometry.setBackgroundResource(R.drawable.btn_status)
+
         initViewModel()
         binding.btnOperator.setOnClickListener {
+            binding.btnOperator.setBackgroundResource(R.drawable.btn_status)
+            binding.btnTrigonometry.setBackgroundResource(0)
             binding.cstLayoutKeyboard.cstLayoutTrigonometry.visibility = View.GONE
             binding.cstLayoutKeyboard.cstLayoutOperator.visibility = View.VISIBLE
         }
         binding.btnTrigonometry.setOnClickListener {
+            binding.btnOperator.setBackgroundResource(0)
+            binding.btnTrigonometry.setBackgroundResource(R.drawable.btn_status)
             binding.cstLayoutKeyboard.cstLayoutTrigonometry.visibility = View.VISIBLE
             binding.cstLayoutKeyboard.cstLayoutOperator.visibility = View.GONE
         }
-
+        val alpha = AlphaAnimation(0f, 1f)
+        alpha.duration = 300
+        alpha.fillAfter = true
+        binding.cstLayoutKeyboard.btn1.setOnClickListener {
+            binding.cstLayoutKeyboard.btn1.startAnimation(alpha)
+        }
     }
 
-    private fun initViewModel(){
-        calculatorViewModel = ViewModelProvider(this,viewmodelFactory).get(CalculatorViewModel::class.java)
+    private fun initViewModel() {
+        calculatorViewModel =
+            ViewModelProvider(this, viewmodelFactory)[CalculatorViewModel::class.java]
         binding.calculatorViewModell = calculatorViewModel
         binding.cstLayoutKeyboard.calculatorViewModel = calculatorViewModel
         binding.lifecycleOwner = this

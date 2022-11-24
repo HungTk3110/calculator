@@ -8,15 +8,18 @@
 
 package com.bangcodin.calculator.data.repository
 
+import com.bangcodin.calculator.data.api.API_KEY
 import com.bangcodin.calculator.data.api.ApiService
 import com.bangcodin.calculator.data.api.ConverterResponse
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class Repositorylmpl @Inject constructor(private val apiService: ApiService) :Repository{
-    override fun callApi(from: String, to: String, amount: Double): ConverterResponse {
-       return apiService.getCurrencyConverter(from = from, to = to, amount = amount).body()!!
+class Repositorylmpl @Inject constructor(private val apiService: ApiService) : Repository {
+    override suspend fun callApi(from: String, to: String, amount: Double): ConverterResponse {
+        return kotlin.runCatching {
+            apiService.getCurrencyConverter(from = from, to = to, amount = amount).body()
+        }.getOrNull() ?: ConverterResponse("0","0","0")
     }
 
 }

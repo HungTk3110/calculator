@@ -9,6 +9,8 @@
 package com.bangcodin.calculator.ui.fragment
 
 
+import android.view.animation.AlphaAnimation
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import androidx.viewbinding.ViewBinding
@@ -31,18 +33,25 @@ class   SettingFragment : BaseFragment() {
 
 
     private fun setOnClickItem() {
+        val alpha = AlphaAnimation(0f, 1f)
+        alpha.duration = 400
+        alpha.fillAfter = true
         val share = ShareFragment()
         val term = TermFragment()
         binding.iclListSetting.itemEnglish.setOnClickListener {
+            binding.iclListSetting.itemEnglish.startAnimation(alpha)
             openActivity(LanguageActivity::class.java)
         }
         binding.iclListSetting.itemShare.setOnClickListener {
+            binding.iclListSetting.itemShare.startAnimation(alpha)
             share.show(parentFragmentManager, "BottomSheetShare")
         }
         binding.iclListSetting.itemRate.setOnClickListener {
+            binding.iclListSetting.itemRate.startAnimation(alpha)
             Toast.makeText(context, "Tính năng đang hoàn thiện!", Toast.LENGTH_SHORT).show()
         }
         binding.iclListSetting.itemTerm.setOnClickListener {
+            binding.iclListSetting.itemTerm.startAnimation(alpha)
             pushScreenAsNormalWithT6(term, TermFragment::class.java.name)
         }
 

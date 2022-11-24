@@ -57,7 +57,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     android:text="@string/tv_Setting1" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/img_check"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -110,7 +110,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     android:text="@string/tv_Setting2" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/img_check2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -163,7 +163,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     android:text="@string/tv_Setting3" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/img_check3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -216,7 +216,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     android:text="@string/tv_Setting4" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/img_check4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

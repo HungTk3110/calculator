@@ -316,6 +316,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="2:1"
             app:layout_constraintEnd_toStartOf="@+id/textView3"
+
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton
@@ -332,7 +333,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/textView5"
+
             app:layout_constraintStart_toEndOf="@+id/btn_0" />
+
 
         <ImageButton
             android:id="@+id/btn_1"
@@ -389,15 +392,16 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_margin="@dimen/_6sdp"
+            android:layout_marginEnd="29dp"
             android:background="@android:color/transparent"
-            android:foreground="@drawable/foreground_btn_3"
+            android:foreground="@drawable/foreground_btn_2"
             android:onClick="@{() -> currency.delete()}"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_del"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btn_3" />
+            app:layout_constraintStart_toEndOf="@+id/btn_." />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
