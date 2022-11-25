@@ -67,8 +67,8 @@ class CurrencyConverterViewModel @Inject constructor(
         _tvResult.value = ""
         _tvNationalNeedConvert.value = "USD - US Dollar "
         _tvNationalConverted.value = "VND - Vietnames Dong "
-        _imgNationalNeedConvert.value = R.drawable.ic_vietnam
-        _imgNationalConverted.value = R.drawable.ic_united_states
+        _imgNationalNeedConvert.value = R.drawable.ic_united_states
+        _imgNationalConverted.value = R.drawable.ic_vietnam
     }
 
 
@@ -179,7 +179,7 @@ class CurrencyConverterViewModel @Inject constructor(
                 }
                 6 -> {
                     _imgNationalNeedConvert.value = R.drawable.ic_vietnam
-                    _tvNationalNeedConvert.value = "VND - Vietnames Dong"
+                    _tvNationalNeedConvert.value = "VND - Vietnames Dong "
                 }
             }
         }
@@ -219,14 +219,13 @@ class CurrencyConverterViewModel @Inject constructor(
                 }
                 6 -> {
                     _imgNationalConverted.value = R.drawable.ic_vietnam
-                    _tvNationalConverted.value = "VND - Vietnames Dong"
+                    _tvNationalConverted.value = "VND - Vietnames Dong "
                 }
             }
         }
     }
 
     fun Convert() {
-        var converterResponse = ConverterResponse("0","0","0")
         var converter = 0.0
         if (_tvInput.value.toString().trim() != "") {
             try {
@@ -238,9 +237,9 @@ class CurrencyConverterViewModel @Inject constructor(
             to = mapLanguageCode[_tvNationalConverted.value].toString()
             Log.d("oaaaa", from + "///" + to + "///" + converter)
             viewModelScope.launch {
-                converterResponse = repository.callApi(from, to, converter)
+                val converterResponse = repository.callApi(from, to, converter)
+                _tvResult.value = converterResponse.result.toString()
             }
-            _tvResult.value = converterResponse.result.toString()
         } else {
             Toast.makeText(application, "Please enter input amount!", Toast.LENGTH_SHORT).show()
         }

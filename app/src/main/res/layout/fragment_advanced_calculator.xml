@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:gravity="end"
-            android:maxLines="1"
+            android:maxLength="15"
             android:padding="10dp"
             android:text="@{CalculatorViewModell.tvResult}"
             android:textColor="@color/white"
