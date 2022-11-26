@@ -9,9 +9,6 @@
 package com.bangcodin.calculator.ui.viewmodel
 
 import android.app.Application
-import android.view.View
-import android.view.animation.AlphaAnimation
-import android.view.animation.RotateAnimation
 import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -22,6 +19,9 @@ import kotlin.math.ln
 import kotlin.math.log10
 import kotlin.math.pow
 import kotlin.math.sqrt
+import java.math.BigDecimal
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 class CalculatorViewModel @Inject constructor(
     private val application: Application,
@@ -106,19 +106,28 @@ class CalculatorViewModel @Inject constructor(
 
     fun clearAll() {
         _tvInput.value = ""
-        _tvResult.value = "0"
+        _tvResult.value = ""
     }
 
     fun delete() {
         var str = _tvInput.value.toString()
         if (str.isNotEmpty()) {
-            str = str.substring(0, str.length - 1)
+            if (str.length >= 3 && ((str.substring(
+                    str.length - 3,
+                    str.length
+                ) == "sin") || (str.substring(str.length - 3, str.length) == "cos") ||
+                        (str.substring(str.length - 3, str.length) == "tan")
+                        || (str.substring(str.length - 3, str.length) == "cot"))
+            ) {
+                str = str.substring(0, str.length -3)
+            } else
+                str = str.substring(0, str.length - 1)
         }
         _tvInput.value = str
     }
 
     fun addPi() {
-        _tvInput.value += pi
+        _tvInput.value += "π"
     }
 
     fun sin() {
@@ -140,7 +149,7 @@ class CalculatorViewModel @Inject constructor(
     fun push() {
         val str: String = _tvInput.value.toString()
         if (str.isNotEmpty() && str.substring(str.length - 1) != "+" && str.substring(str.length - 1) != "-"
-            && str.substring(str.length - 1) != "*" && str.substring(str.length - 1) != "/"
+            && str.substring(str.length - 1) != "×" && str.substring(str.length - 1) != "÷"
         ) {
             _tvInput.value += "+"
         }
@@ -149,7 +158,7 @@ class CalculatorViewModel @Inject constructor(
     fun minus() {
         val str: String = _tvInput.value.toString()
         if (str.isNotEmpty() && str.substring(str.length - 1) != "+" && str.substring(str.length - 1) != "-"
-            && str.substring(str.length - 1) != "*" && str.substring(str.length - 1) != "/"
+            && str.substring(str.length - 1) != "×" && str.substring(str.length - 1) != "÷"
         ) {
             _tvInput.value += "-"
         }
@@ -158,36 +167,37 @@ class CalculatorViewModel @Inject constructor(
     fun multiplied() {
         val str: String = _tvInput.value.toString()
         if (str.isNotEmpty() && str.substring(str.length - 1) != "+" && str.substring(str.length - 1) != "-"
-            && str.substring(str.length - 1) != "*" && str.substring(str.length - 1) != "/"
+            && str.substring(str.length - 1) != "×" && str.substring(str.length - 1) != "÷"
         ) {
-            _tvInput.value += "*"
+            _tvInput.value += "×"
         }
     }
 
     fun division() {
         val str: String = _tvInput.value.toString()
         if (str.isNotEmpty() && str.substring(str.length - 1) != "+" && str.substring(str.length - 1) != "-"
-            && str.substring(str.length - 1) != "*" && str.substring(str.length - 1) != "/"
+            && str.substring(str.length - 1) != "×" && str.substring(str.length - 1) != "÷"
         ) {
-            _tvInput.value += "/"
+            _tvInput.value += "÷"
         }
     }
 
     fun equal() {
-        val str: String = _tvInput.value.toString()
+        var str: String = _tvInput.value.toString()
         var result = 0.0
+        str = str.replace("÷","/")
+        str = str.replace("×","*")
+        str = str.replace("π",pi)
         try {
             result = evaluate(str)
         } catch (e: RuntimeException) {
             Toast.makeText(application, e.message, Toast.LENGTH_SHORT).show()
         }
-
         val r = result.toString()
         if (r.substring(r.indexOf(".") + 1) == "0")
             _tvResult.value = r.substring(0, r.indexOf("."))
         else
             _tvResult.value = r
-        _tvInput.value = str
     }
 
     private fun evaluate(str: String): Double {
@@ -210,7 +220,7 @@ class CalculatorViewModel @Inject constructor(
             fun parse(): Double {
                 nextChar()
                 val x = parseExpression()
-                if (pos < str.length) throw RuntimeException("Unexpected: " + ch.toChar())
+                if (pos < str.length) throw RuntimeException("không thực hiện được phép tính ")
                 return x
             }
 
@@ -261,6 +271,7 @@ class CalculatorViewModel @Inject constructor(
                             "cos" -> kotlin.math.cos(
                                 Math.toRadians(x)
                             )
+                            "cot" -> 1 / kotlin.math.tan(Math.toRadians(x))
                             "tan" -> kotlin.math.tan(Math.toRadians(x))
                             "log" -> log10(x)
                             "ln" -> ln(x)

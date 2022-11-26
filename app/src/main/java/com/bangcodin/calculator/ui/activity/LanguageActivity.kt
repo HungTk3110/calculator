@@ -54,7 +54,7 @@ class LanguageActivity : BaseActivity(), Callback {
         )
         recreate()
         openActivity(MainActivity::class.java, false)
-    }
+     }
 
     private fun setRCVLanguage() {
         val adapter = LanguageAdapter(languageViewModel, this)
