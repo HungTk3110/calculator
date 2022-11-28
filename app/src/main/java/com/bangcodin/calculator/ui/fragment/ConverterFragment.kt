@@ -24,8 +24,6 @@ class ConverterFragment : BaseFragment() {
         return R.layout.fragment_converter
     }
 
-
-
     private fun setOnClickItem(){
             val bottomSheetFragment = BottomSheetFragment()
             binding.toolbar.setOnClickListener{

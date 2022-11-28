@@ -8,6 +8,7 @@
 
 package com.bangcodin.calculator.ui.viewmodel
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.widget.Toast
 import androidx.lifecycle.LiveData
@@ -28,7 +29,8 @@ class CalculatorViewModel @Inject constructor(
     private val historyDatabase: HistoryDatabase
 ) : ViewModel() {
 
-    private val pi = "3.14159265"
+    private val pi = Math.PI.toString()
+    private val e = Math.E.toString()
     private var _tvInput = MutableLiveData<String>()
     val tvInput: LiveData<String>
         get() = _tvInput
@@ -36,11 +38,12 @@ class CalculatorViewModel @Inject constructor(
     val tvResult: LiveData<String>
         get() = _tvResult
 
-    var temp1 =""
-    var temp2 = ""
+    private var temp1 = ""
+    private var temp2 = ""
+
     init {
         _tvInput.value = ""
-        _tvResult.value = "0"
+        _tvResult.value = ""
     }
 
     fun addOne() {
@@ -119,9 +122,16 @@ class CalculatorViewModel @Inject constructor(
                     str.length
                 ) == "sin") || (str.substring(str.length - 3, str.length) == "cos") ||
                         (str.substring(str.length - 3, str.length) == "tan")
-                        || (str.substring(str.length - 3, str.length) == "cot"))
+                        || (str.substring(str.length - 3, str.length) == "cot")
+                        || (str.substring(str.length - 3, str.length) == "log"))
             ) {
                 str = str.substring(0, str.length - 3)
+            } else if (str.length >= 2 && ((str.substring(
+                    str.length - 2,
+                    str.length
+                ) == "ln"))
+            ) {
+                str = str.substring(0, str.length - 2)
             } else
                 str = str.substring(0, str.length - 1)
         }
@@ -144,15 +154,29 @@ class CalculatorViewModel @Inject constructor(
         _tvInput.value += "tan"
     }
 
-    fun cot() {
-        _tvInput.value += "cot"
+    fun sqrt() {
+        _tvInput.value += "√"
     }
 
-
-    fun pow(){
+    fun pow() {
         _tvInput.value += "^"
     }
 
+    fun ln() {
+        _tvInput.value += "ln"
+    }
+
+    fun log() {
+        _tvInput.value += "log"
+    }
+
+    fun gt() {
+        _tvInput.value += "!"
+    }
+
+    fun euler() {
+        _tvInput.value += "e"
+    }
 
     fun push() {
         val str: String = _tvInput.value.toString()
@@ -192,29 +216,34 @@ class CalculatorViewModel @Inject constructor(
 
     fun equal() {
         var str: String = _tvInput.value.toString()
-        var result = 0.0
+        val temp: String = _tvInput.value.toString()
+        var result = ""
         str = str.replace("÷", "/")
         str = str.replace("×", "*")
         str = str.replace("π", pi)
+        str = str.replace("e", e)
+        str = str.replace("√", "sqrt")
+        str = str.replace("cos90", "0")
+        str = str.replace("cos(90", "0")
+        str = str.replace("cos(90)", "0")
         try {
-            result = evaluate(str)
-            val r = result.toString()
-            if (r.substring(r.indexOf(".") + 1) == "0")
-                _tvResult.value = r.substring(0, r.indexOf("."))
-            else
-                _tvResult.value = r
+            result = evaluate(str).toString()
 
-            if( r!= temp1 && str != temp2){
-                val history = History(null, getDateTime(), r, str)
-                historyDatabase.historyDao().insertHistory(history)
-            }
-
-            temp1 = r
-            temp2 = str
         } catch (e: RuntimeException) {
             Toast.makeText(application, e.message, Toast.LENGTH_SHORT).show()
         }
-
+        if (result.substring(result.indexOf(".") + 1) == "0"){
+            result = result.substring(0, result.indexOf("."))
+            _tvResult.value = result
+        }
+        else
+            _tvResult.value = result
+        if (result != temp1 && str != temp2 && result != "") {
+            val history = History(null, getDateTime(), result, temp)
+            historyDatabase.historyDao().insertHistory(history)
+        }
+        temp1 = result
+        temp2 = str
     }
 
     private fun evaluate(str: String): Double {
@@ -237,7 +266,7 @@ class CalculatorViewModel @Inject constructor(
             fun parse(): Double {
                 nextChar()
                 val x = parseExpression()
-                if (pos < str.length) throw RuntimeException("không thực hiện được phép tính ")
+                if (pos < str.length) throw RuntimeException("không thực hiện được phép tính1 ")
                 return x
             }
 
@@ -255,7 +284,7 @@ class CalculatorViewModel @Inject constructor(
                 try {
                     x = parseFactor()
                 } catch (e: RuntimeException) {
-                    Toast.makeText(application, e.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(application, e.message + "abc", Toast.LENGTH_SHORT).show()
                 }
                 while (true) {
                     if (eat('*'.code)) x *= parseFactor()
@@ -293,14 +322,18 @@ class CalculatorViewModel @Inject constructor(
                             "log" -> log10(x)
                             "ln" -> ln(x)
                             else -> throw RuntimeException(
-                                "không thực hiện được phép tính "
+                                "không thực hiện được phép tính 2"
                             )
                         }
                 } else {
-                    throw RuntimeException("không thực hiện được phép tính")
+                    throw RuntimeException("không thực hiện được phép tính3")
 
                 }
                 if (eat('^'.code)) x = x.pow(parseFactor())
+                if (x.toString().substring(x.toString().length - 1, x.toString().length) == "0") {
+                    val temp: Int = x.toInt()
+                    if (eat('!'.code)) x = fact(temp).toDouble()
+                }
                 return x
             }
         }.parse()
@@ -311,9 +344,17 @@ class CalculatorViewModel @Inject constructor(
             _tvInput.value = ""
     }
 
+    @SuppressLint("SimpleDateFormat")
     private fun getDateTime(): String {
         val simpleDate = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
-        val currentDate = simpleDate.format(Date())
-        return currentDate
+        return simpleDate.format(Date())
+    }
+
+    fun fact(num: Int): Int {
+        return if (num == 1) {
+            num
+        } else {
+            num * fact(num - 1)
+        }
     }
 }

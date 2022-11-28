@@ -140,7 +140,7 @@ class CurrencyConverterViewModel @Inject constructor(
 
     fun clearAll() {
         _tvInput.value = ""
-        _tvResult.value = "0"
+        _tvResult.value = ""
     }
 
     fun delete() {
@@ -231,7 +231,7 @@ class CurrencyConverterViewModel @Inject constructor(
         }
     }
 
-    fun Convert() {
+    fun convert() {
         var converter = 0.0
         if (_tvInput.value.toString().trim() != "") {
             try {
@@ -241,6 +241,7 @@ class CurrencyConverterViewModel @Inject constructor(
             }
             from = mapLanguageCode[_tvNationalNeedConvert.value].toString()
             to = mapLanguageCode[_tvNationalConverted.value].toString()
+            _tvResult.value = "Please wait ..."
             viewModelScope.launch {
                 val converterResponse = repository.callApi(from, to, converter)
 //                val formatter: NumberFormat = DecimalFormat("#,###")

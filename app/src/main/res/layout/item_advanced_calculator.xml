@@ -20,7 +20,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:foreground="@drawable/foreground_btn"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -308,7 +308,7 @@
                 android:onClick="@{()->CalculatorViewModel.addThree()}"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn3"
-                app:layout_constraintBottom_toTopOf="@id/btn_pi_Trigonometry"
+                app:layout_constraintBottom_toTopOf="@id/btn_e_Trigonometry"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@id/btn_tan_Trigonometry"
                 app:layout_constraintStart_toEndOf="@+id/btn_2_Trigonometry"
@@ -324,7 +324,7 @@
                 android:onClick="@{()->CalculatorViewModel.tan()}"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn_tan"
-                app:layout_constraintBottom_toTopOf="@id/btn_cot_Trigonometry"
+                app:layout_constraintBottom_toTopOf="@id/btn_log_Trigonometry"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@id/btn_plus_Trigonometry"
                 app:layout_constraintHorizontal_bias="0.483"
@@ -375,40 +375,40 @@
                 android:src="@drawable/ic_dot"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/btn_pi_Trigonometry"
+                app:layout_constraintEnd_toStartOf="@id/btn_e_Trigonometry"
                 app:layout_constraintStart_toEndOf="@+id/btn_0_Trigonometry"
                 app:layout_constraintTop_toBottomOf="@+id/btn_2_Trigonometry" />
 
             <ImageButton
-                android:id="@+id/btn_pi_Trigonometry"
+                android:id="@+id/btn_e_Trigonometry"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/_6sdp"
                 android:background="@android:color/transparent"
                 android:foreground="@drawable/foreground_btn"
-                android:onClick="@{()->CalculatorViewModel.addPi()}"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_btn_pi"
+                android:src="@drawable/btn_e"
+                android:onClick="@{()->CalculatorViewModel.euler()}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/btn_cot_Trigonometry"
+                app:layout_constraintEnd_toStartOf="@id/btn_log_Trigonometry"
                 app:layout_constraintStart_toEndOf="@+id/btn_._Trigonometry"
                 app:layout_constraintTop_toBottomOf="@+id/btn_3_Trigonometry" />
 
             <ImageButton
-                android:id="@+id/btn_cot_Trigonometry"
+                android:id="@+id/btn_log_Trigonometry"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/_6sdp"
                 android:background="@android:color/transparent"
                 android:foreground="@drawable/foreground_btn"
-                android:onClick="@{()->CalculatorViewModel.cot()}"
+                android:onClick="@{()->CalculatorViewModel.log()}"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_btn_cot"
+                android:src="@drawable/btn_log"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@id/btn_equals_Trigonometry"
-                app:layout_constraintStart_toEndOf="@+id/btn_pi_Trigonometry"
+                app:layout_constraintStart_toEndOf="@+id/btn_e_Trigonometry"
                 app:layout_constraintTop_toBottomOf="@+id/btn_tan_Trigonometry" />
 
             <ImageButton
@@ -424,7 +424,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btn_cot_Trigonometry"
+                app:layout_constraintStart_toEndOf="@+id/btn_log_Trigonometry"
                 app:layout_constraintTop_toBottomOf="@+id/btn_plus_Trigonometry" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -434,7 +434,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:foreground="@drawable/foreground_btn"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -576,6 +576,7 @@
                 android:foreground="@drawable/foreground_btn"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn_mathematics"
+                android:onClick="@{() -> CalculatorViewModel.gt()}"
                 app:layout_constraintBottom_toTopOf="@id/btn_pow"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@id/btn_multiplied"
@@ -735,7 +736,8 @@
                 android:foreground="@drawable/foreground_btn"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn_sqrt"
-                app:layout_constraintBottom_toTopOf="@id/btn_cot"
+                android:onClick="@{() -> CalculatorViewModel.sqrt()}"
+                app:layout_constraintBottom_toTopOf="@id/btn_ln"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@id/btn_plus"
                 app:layout_constraintHorizontal_bias="0.483"
@@ -799,21 +801,23 @@
                 android:foreground="@drawable/foreground_btn"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn_pi"
+                android:onClick="@{() -> CalculatorViewModel.addPi()}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/btn_cot"
+                app:layout_constraintEnd_toStartOf="@id/btn_ln"
                 app:layout_constraintStart_toEndOf="@+id/btnDotTrigonometry"
                 app:layout_constraintTop_toBottomOf="@+id/btn_3" />
 
             <ImageButton
-                android:id="@+id/btn_cot"
+                android:id="@+id/btn_ln"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_margin="@dimen/_6sdp"
                 android:background="@android:color/transparent"
                 android:foreground="@drawable/foreground_btn"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_btn_cot"
+                android:src="@drawable/btn_ln"
+                android:onClick="@{() -> CalculatorViewModel.ln()}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@id/btn_equals"
@@ -833,7 +837,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/btn_cot"
+                app:layout_constraintStart_toEndOf="@+id/btn_ln"
                 app:layout_constraintTop_toBottomOf="@+id/btn_plus" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

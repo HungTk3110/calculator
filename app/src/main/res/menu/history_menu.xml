@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /**
+  ~  * Created by Nguyen Van Thai on 8/25/22, 2:11 PM
+  ~  * Copyright (c) 2022 . All rights reserved.
+  ~  * Last modified 8/25/22, 2:11 PM
+  ~  */
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/delete"
+        android:title="Delete"/>
+
+    <item
+        android:id="@+id/copy"
+        android:title="Copy result" />
+
+</menu>

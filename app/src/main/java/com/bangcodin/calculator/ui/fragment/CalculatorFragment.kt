@@ -28,7 +28,7 @@ class CalculatorFragment : BaseFragment() {
     override fun initView(viewBinding: ViewBinding) {
         this.binding = viewBinding as FragmentAdvancedCalculatorBinding
 
-        binding.btnTrigonometry.setBackgroundResource(R.drawable.btn_status)
+        binding.btnOperator.setBackgroundResource(R.drawable.btn_status)
 
         initViewModel()
         binding.btnOperator.setOnClickListener {
