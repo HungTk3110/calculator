@@ -14,14 +14,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bangcodin.calculator.data.database.HistoryDatabase
+import com.bangcodin.calculator.data.models.History
+import java.text.SimpleDateFormat
+import java.util.*
 import javax.inject.Inject
 import kotlin.math.ln
 import kotlin.math.log10
 import kotlin.math.pow
 import kotlin.math.sqrt
-import java.math.BigDecimal
-import java.math.RoundingMode
-import java.text.DecimalFormat
 
 class CalculatorViewModel @Inject constructor(
     private val application: Application,
@@ -36,6 +36,8 @@ class CalculatorViewModel @Inject constructor(
     val tvResult: LiveData<String>
         get() = _tvResult
 
+    var temp1 =""
+    var temp2 = ""
     init {
         _tvInput.value = ""
         _tvResult.value = "0"
@@ -119,7 +121,7 @@ class CalculatorViewModel @Inject constructor(
                         (str.substring(str.length - 3, str.length) == "tan")
                         || (str.substring(str.length - 3, str.length) == "cot"))
             ) {
-                str = str.substring(0, str.length -3)
+                str = str.substring(0, str.length - 3)
             } else
                 str = str.substring(0, str.length - 1)
         }
@@ -145,6 +147,12 @@ class CalculatorViewModel @Inject constructor(
     fun cot() {
         _tvInput.value += "cot"
     }
+
+
+    fun pow(){
+        _tvInput.value += "^"
+    }
+
 
     fun push() {
         val str: String = _tvInput.value.toString()
@@ -185,19 +193,28 @@ class CalculatorViewModel @Inject constructor(
     fun equal() {
         var str: String = _tvInput.value.toString()
         var result = 0.0
-        str = str.replace("÷","/")
-        str = str.replace("×","*")
-        str = str.replace("π",pi)
+        str = str.replace("÷", "/")
+        str = str.replace("×", "*")
+        str = str.replace("π", pi)
         try {
             result = evaluate(str)
+            val r = result.toString()
+            if (r.substring(r.indexOf(".") + 1) == "0")
+                _tvResult.value = r.substring(0, r.indexOf("."))
+            else
+                _tvResult.value = r
+
+            if( r!= temp1 && str != temp2){
+                val history = History(null, getDateTime(), r, str)
+                historyDatabase.historyDao().insertHistory(history)
+            }
+
+            temp1 = r
+            temp2 = str
         } catch (e: RuntimeException) {
             Toast.makeText(application, e.message, Toast.LENGTH_SHORT).show()
         }
-        val r = result.toString()
-        if (r.substring(r.indexOf(".") + 1) == "0")
-            _tvResult.value = r.substring(0, r.indexOf("."))
-        else
-            _tvResult.value = r
+
     }
 
     private fun evaluate(str: String): Double {
@@ -292,5 +309,11 @@ class CalculatorViewModel @Inject constructor(
     private fun check0() {
         if (_tvInput.value.toString() == "0")
             _tvInput.value = ""
+    }
+
+    private fun getDateTime(): String {
+        val simpleDate = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+        val currentDate = simpleDate.format(Date())
+        return currentDate
     }
 }

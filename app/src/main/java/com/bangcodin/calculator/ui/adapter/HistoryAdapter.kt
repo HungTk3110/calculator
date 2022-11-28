@@ -31,8 +31,8 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.MyViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.itemView.setOnClickListener {
-            listener?.onItemClickListener(items[position])
+        holder.img_showMenu.setOnClickListener {
+            listener?.onItemClickListener(position, items[position])
         }
         holder.bind(items[position])
 
@@ -52,13 +52,10 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.MyViewHolder>(){
             tv_result.text =data.result
             tv_calculator.text = data.calculator
             tv_date_time.text = data.dateTime
-            img_showMenu.setOnClickListener{
-
-            }
         }
     }
     interface RowClickListener{
-        fun onItemClickListener(history: History)
+        fun onItemClickListener(position: Int,history: History)
     }
 
 }

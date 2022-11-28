@@ -145,6 +145,7 @@
             android:id="@+id/tv_date_updated"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@{currency.date}"
             android:layout_marginHorizontal="@dimen/_16sdp"
             android:layout_marginBottom="@dimen/_16ssp"
             android:gravity="center_horizontal"

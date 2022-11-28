@@ -655,6 +655,7 @@
                 android:foreground="@drawable/foreground_btn"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_btn_pow"
+                android:onClick="@{() -> CalculatorViewModel.pow()}"
                 app:layout_constraintBottom_toTopOf="@id/btn_sqrt"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@id/btn_minus"

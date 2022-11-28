@@ -21,6 +21,8 @@ import com.bangcodin.calculator.data.api.ConverterResponse
 import com.bangcodin.calculator.data.repository.Repository
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
+import java.text.DecimalFormat
+import java.text.NumberFormat
 import javax.inject.Inject
 
 class CurrencyConverterViewModel @Inject constructor(
@@ -62,6 +64,9 @@ class CurrencyConverterViewModel @Inject constructor(
     val imgNationalConverted: LiveData<Int>
         get() = _imgNationalConverted
 
+    private var _date = MutableLiveData<String>()
+    val date: LiveData<String>
+        get() = _date
     init {
         _tvInput.value = ""
         _tvResult.value = ""
@@ -69,6 +74,7 @@ class CurrencyConverterViewModel @Inject constructor(
         _tvNationalConverted.value = "VND - Vietnames Dong "
         _imgNationalNeedConvert.value = R.drawable.ic_united_states
         _imgNationalConverted.value = R.drawable.ic_vietnam
+        _date.value = ""
     }
 
 
@@ -235,10 +241,11 @@ class CurrencyConverterViewModel @Inject constructor(
             }
             from = mapLanguageCode[_tvNationalNeedConvert.value].toString()
             to = mapLanguageCode[_tvNationalConverted.value].toString()
-            Log.d("oaaaa", from + "///" + to + "///" + converter)
             viewModelScope.launch {
                 val converterResponse = repository.callApi(from, to, converter)
+//                val formatter: NumberFormat = DecimalFormat("#,###")
                 _tvResult.value = converterResponse.result.toString()
+                _date.value = "Data comes from Webull, updated on " + converterResponse.date.toString()
             }
         } else {
             Toast.makeText(application, "Please enter input amount!", Toast.LENGTH_SHORT).show()

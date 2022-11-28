@@ -11,12 +11,16 @@ package com.bangcodin.calculator.ui.fragment
 
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.view.MenuItem
+import android.widget.PopupMenu
+import android.widget.Toast
+import androidx.core.view.get
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewbinding.ViewBinding
 import com.bangcodin.calculator.R
-import com.bangcodin.calculator.databinding.FragmentHistoryBinding
 import com.bangcodin.calculator.data.models.History
+import com.bangcodin.calculator.databinding.FragmentHistoryBinding
 import com.bangcodin.calculator.ui.adapter.HistoryAdapter
 import com.bangcodin.calculator.ui.base.BaseFragment
 import com.bangcodin.calculator.ui.viewmodel.HistoryViewModel
@@ -40,18 +44,18 @@ class HistoryFragment : BaseFragment(), HistoryAdapter.RowClickListener {
             with(builder) {
                 setTitle("Confirm delete all History")
                 setMessage("Are you sure")
+                setNegativeButton("No", null)
                 setPositiveButton("OK", DialogInterface.OnClickListener { builder, which ->
                     historyViewModel.deleteHistory()
-                    historyAdapter.notifyDataSetChanged()
+                    setRcvHistory(historyViewModel.listData)
                 })
-                setNegativeButton("No", null)
                     .show()
             }
             historyAdapter.notifyDataSetChanged()
         }
     }
 
-    fun initViewModel() {
+    private fun initViewModel() {
         historyViewModel =
             ViewModelProvider(this, viewmodelFactory)[HistoryViewModel::class.java]
     }
@@ -66,8 +70,41 @@ class HistoryFragment : BaseFragment(), HistoryAdapter.RowClickListener {
         binding.rcvHistory.layoutManager = LinearLayoutManager(activity)
     }
 
-    override fun onItemClickListener(history: History) {
-        TODO("Not yet implemented")
+    override fun onItemClickListener(position: Int, history: History) {
+        val popupMenu = PopupMenu(
+            requireContext(),
+            binding.rcvHistory[position].findViewById(R.id.img_ShowMenu)
+        )
+        popupMenu.inflate(R.menu.bottom_navigation_menu)
+        // implement on menu item click Listener
+        popupMenu.setOnMenuItemClickListener(object : PopupMenu.OnMenuItemClickListener {
+            override fun onMenuItemClick(item: MenuItem?): Boolean {
+                when (item?.itemId) {
+                    R.id.calculatorFragment -> {
+                        Toast.makeText(requireContext(), "Item 1 clicked", Toast.LENGTH_SHORT)
+                            .show()
+                        return true
+                    }
+                    // in the same way you can implement others
+                    R.id.conversionFragment -> {
+                        // define
+                        Toast.makeText(requireContext(), "Item 2 clicked", Toast.LENGTH_SHORT)
+                            .show()
+                        return true
+                    }
+                    R.id.historyFragment -> {
+                        // define
+                        Toast.makeText(requireContext(), "Item 3 clicked", Toast.LENGTH_SHORT)
+                            .show()
+                        return true
+                    }
+                }
+                return false
+            }
+        })
+        popupMenu.show()
     }
-
+    override fun onDestroy() {
+        super.onDestroy()
+    }
 }
