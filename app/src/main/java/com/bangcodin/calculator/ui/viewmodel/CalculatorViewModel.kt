@@ -223,9 +223,6 @@ class CalculatorViewModel @Inject constructor(
         str = str.replace("π", pi)
         str = str.replace("e", e)
         str = str.replace("√", "sqrt")
-        str = str.replace("cos90", "0")
-        str = str.replace("cos(90", "0")
-        str = str.replace("cos(90)", "0")
         try {
             result = evaluate(str).toString()
 
@@ -271,7 +268,12 @@ class CalculatorViewModel @Inject constructor(
             }
 
             fun parseExpression(): Double {
-                var x = parseTerm()
+                var x = 0.0
+                try {
+                    x = parseFactor()
+                } catch (e: RuntimeException) {
+                    Toast.makeText(application, e.message + "abc1", Toast.LENGTH_SHORT).show()
+                }
                 while (true) {
                     if (eat('+'.code)) x += parseTerm()
                     else if (eat('-'.code)) x -= parseTerm()
@@ -311,14 +313,16 @@ class CalculatorViewModel @Inject constructor(
                     x =
                         when (func) {
                             "sqrt" -> sqrt(x)
-                            "sin" -> kotlin.math.sin(
-                                Math.toRadians(x)
-                            )
-                            "cos" -> kotlin.math.cos(
-                                Math.toRadians(x)
-                            )
-                            "cot" -> 1 / kotlin.math.tan(Math.toRadians(x))
-                            "tan" -> kotlin.math.tan(Math.toRadians(x))
+                            "sin" -> roundOffDecimal(kotlin.math.sin(
+                                Math.PI*x/180
+                            ))
+
+                            "cos" -> roundOffDecimal(kotlin.math.cos(
+                                Math.PI*x/180
+                            ))
+
+                            "cot" -> 1 / kotlin.math.tan(Math.PI*x/180)
+                            "tan" -> roundOffDecimal(kotlin.math.tan(Math.PI*x/180))
                             "log" -> log10(x)
                             "ln" -> ln(x)
                             else -> throw RuntimeException(
@@ -332,7 +336,8 @@ class CalculatorViewModel @Inject constructor(
                 if (eat('^'.code)) x = x.pow(parseFactor())
                 if (x.toString().substring(x.toString().length - 1, x.toString().length) == "0") {
                     val temp: Int = x.toInt()
-                    if (eat('!'.code)) x = fact(temp).toDouble()
+                    if (temp < 60)
+                    if (eat('!'.code)) x = fact(temp.toLong()).toDouble()
                 }
                 return x
             }
@@ -350,11 +355,15 @@ class CalculatorViewModel @Inject constructor(
         return simpleDate.format(Date())
     }
 
-    fun fact(num: Int): Int {
-        return if (num == 1) {
-            num
+    fun fact(num: Long): Long {
+        return if (num == 1L) {
+            num.toLong()
         } else {
             num * fact(num - 1)
         }
+    }
+
+    fun roundOffDecimal(number: Double): Double {
+        return Math.round(number * 100000000000000.0) / 100000000000000.0
     }
 }
