@@ -9,6 +9,7 @@
 package com.bangcodin.calculator.ui.fragment
 
 
+import android.content.Intent
 import android.view.animation.AlphaAnimation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
@@ -44,7 +45,14 @@ class   SettingFragment : BaseFragment() {
         }
         binding.iclListSetting.itemShare.setOnClickListener {
             binding.iclListSetting.itemShare.startAnimation(alpha)
-            share.show(parentFragmentManager, "BottomSheetShare")
+            val sendIntent = Intent()
+            sendIntent.action = Intent.ACTION_SEND
+            sendIntent.putExtra(
+                Intent.EXTRA_TEXT,
+                "Hey Check out this Great app:"
+            )
+            sendIntent.type = "text/plain"
+            startActivity(sendIntent)
         }
         binding.iclListSetting.itemRate.setOnClickListener {
             binding.iclListSetting.itemRate.startAnimation(alpha)
