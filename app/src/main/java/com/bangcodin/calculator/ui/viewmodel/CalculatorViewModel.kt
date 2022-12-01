@@ -229,11 +229,10 @@ class CalculatorViewModel @Inject constructor(
         } catch (e: RuntimeException) {
             Toast.makeText(application, e.message, Toast.LENGTH_SHORT).show()
         }
-        if (result.substring(result.indexOf(".") + 1) == "0"){
+        if (result.substring(result.indexOf(".") + 1) == "0") {
             result = result.substring(0, result.indexOf("."))
             _tvResult.value = result
-        }
-        else
+        } else
             _tvResult.value = result
         if (result != temp1 && str != temp2 && result != "") {
             val history = History(null, getDateTime(), result, temp)
@@ -263,17 +262,12 @@ class CalculatorViewModel @Inject constructor(
             fun parse(): Double {
                 nextChar()
                 val x = parseExpression()
-                if (pos < str.length) throw RuntimeException("không thực hiện được phép tính1 ")
+                if (pos < str.length) throw RuntimeException("không thực hiện được phép tính ")
                 return x
             }
 
             fun parseExpression(): Double {
-                var x = 0.0
-                try {
-                    x = parseFactor()
-                } catch (e: RuntimeException) {
-                    Toast.makeText(application, e.message + "abc1", Toast.LENGTH_SHORT).show()
-                }
+                var x = parseTerm()
                 while (true) {
                     if (eat('+'.code)) x += parseTerm()
                     else if (eat('-'.code)) x -= parseTerm()
@@ -282,12 +276,7 @@ class CalculatorViewModel @Inject constructor(
             }
 
             fun parseTerm(): Double {
-                var x = 0.0
-                try {
-                    x = parseFactor()
-                } catch (e: RuntimeException) {
-                    Toast.makeText(application, e.message + "abc", Toast.LENGTH_SHORT).show()
-                }
+                var x = parseFactor()
                 while (true) {
                     if (eat('*'.code)) x *= parseFactor()
                     else if (eat('/'.code)) x /= parseFactor()
@@ -313,31 +302,35 @@ class CalculatorViewModel @Inject constructor(
                     x =
                         when (func) {
                             "sqrt" -> sqrt(x)
-                            "sin" -> roundOffDecimal(kotlin.math.sin(
-                                Math.PI*x/180
-                            ))
+                            "sin" -> roundOffDecimal(
+                                kotlin.math.sin(
+                                    Math.PI * x / 180
+                                )
+                            )
 
-                            "cos" -> roundOffDecimal(kotlin.math.cos(
-                                Math.PI*x/180
-                            ))
+                            "cos" -> roundOffDecimal(
+                                kotlin.math.cos(
+                                    Math.PI * x / 180
+                                )
+                            )
 
-                            "cot" -> 1 / kotlin.math.tan(Math.PI*x/180)
-                            "tan" -> roundOffDecimal(kotlin.math.tan(Math.PI*x/180))
+                            "cot" -> 1 / kotlin.math.tan(Math.PI * x / 180)
+                            "tan" -> roundOffDecimal(kotlin.math.tan(Math.PI * x / 180))
                             "log" -> log10(x)
                             "ln" -> ln(x)
                             else -> throw RuntimeException(
-                                "không thực hiện được phép tính 2"
+                                "không thực hiện được phép tính"
                             )
                         }
                 } else {
-                    throw RuntimeException("không thực hiện được phép tính3")
+                    throw RuntimeException("không thực hiện được phép tính")
 
                 }
                 if (eat('^'.code)) x = x.pow(parseFactor())
                 if (x.toString().substring(x.toString().length - 1, x.toString().length) == "0") {
                     val temp: Int = x.toInt()
                     if (temp < 60)
-                    if (eat('!'.code)) x = fact(temp.toLong()).toDouble()
+                        if (eat('!'.code)) x = fact(temp.toLong()).toDouble()
                 }
                 return x
             }
